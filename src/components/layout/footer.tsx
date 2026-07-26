@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { SITE_NAME, NAV_LINKS, SOCIAL_LINKS } from "@/lib/constants"
-import { LogoMark, DomeDivider } from "@/lib/mughal-patterns"
+import { LogoMark, DomeDivider, MinaretDivider } from "@/lib/mughal-patterns"
 
 export function Footer() {
   return (
@@ -63,9 +63,10 @@ export function Footer() {
             </div>
           </div>
 
-          <DomeDivider className="mx-auto my-8 text-[--accent-gold]" />
+          <MinaretDivider className="my-8" />
+          <DomeDivider className="mx-auto text-[--accent-gold]" />
 
-          <div className="text-center">
+          <div className="text-center mt-6">
             <p className="text-xs text-[--text-secondary]">
               &copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
             </p>

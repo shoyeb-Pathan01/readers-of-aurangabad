@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import { motion, useInView } from "framer-motion"
 
 interface FadeInProps {
@@ -13,13 +13,22 @@ interface FadeInProps {
 
 export function FadeIn({ children, className, delay = 0, y = 16, duration = 0.5 }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: true, margin: "-50px" })
+  const inView = useInView(ref, { once: false, margin: "-30px" })
+  const [hasBeenVisible, setHasBeenVisible] = useState(false)
+
+  useEffect(() => {
+    if (inView && !hasBeenVisible) {
+      setHasBeenVisible(true)
+    }
+  }, [inView, hasBeenVisible])
+
+  const isVisible = hasBeenVisible || inView
 
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y }}
+      animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y }}
       transition={{ duration, delay, ease: "easeOut" }}
       className={className}
     >
@@ -35,11 +44,23 @@ interface StaggerChildrenProps {
 }
 
 export function StaggerContainer({ children, className, staggerDelay = 0.1 }: StaggerChildrenProps) {
+  const ref = useRef<HTMLDivElement>(null)
+  const inView = useInView(ref, { once: false, margin: "-30px" })
+  const [hasBeenVisible, setHasBeenVisible] = useState(false)
+
+  useEffect(() => {
+    if (inView && !hasBeenVisible) {
+      setHasBeenVisible(true)
+    }
+  }, [inView, hasBeenVisible])
+
+  const isVisible = hasBeenVisible || inView
+
   return (
     <motion.div
+      ref={ref}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-50px" }}
+      animate={isVisible ? "visible" : "hidden"}
       variants={{
         visible: { transition: { staggerChildren: staggerDelay } },
         hidden: {},
@@ -77,7 +98,7 @@ export function CountUp({
   className?: string
 }) {
   const ref = useRef<HTMLSpanElement>(null)
-  const inView = useInView(ref, { once: true, margin: "-50px" })
+  const inView = useInView(ref, { once: false, margin: "-30px" })
 
   return (
     <motion.span
@@ -108,23 +129,27 @@ function CountAnimation({
   suffix: string
 }) {
   const ref = useRef<HTMLSpanElement>(null)
+  const hasStarted = useRef(false)
 
-  if (inView) {
-    const startTime = Date.now()
-    const animate = () => {
-      const elapsed = Date.now() - startTime
-      const progress = Math.min(elapsed / (duration * 1000), 1)
-      const eased = 1 - Math.pow(1 - progress, 3)
-      const current = Math.floor(eased * end)
-      if (ref.current) {
-        ref.current.textContent = `${current}${suffix}`
+  useEffect(() => {
+    if (inView && !hasStarted.current) {
+      hasStarted.current = true
+      const startTime = Date.now()
+      const animate = () => {
+        const elapsed = Date.now() - startTime
+        const progress = Math.min(elapsed / (duration * 1000), 1)
+        const eased = 1 - Math.pow(1 - progress, 3)
+        const current = Math.floor(eased * end)
+        if (ref.current) {
+          ref.current.textContent = `${current}${suffix}`
+        }
+        if (progress < 1) {
+          requestAnimationFrame(animate)
+        }
       }
-      if (progress < 1) {
-        requestAnimationFrame(animate)
-      }
+      requestAnimationFrame(animate)
     }
-    requestAnimationFrame(animate)
-  }
+  }, [inView, end, duration, suffix])
 
   return <span ref={ref}>0{suffix}</span>
 }

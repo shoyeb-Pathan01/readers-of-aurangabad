@@ -16,9 +16,12 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[--border-hairline] bg-[--bg-base]/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2 text-[--text-primary] group">
-          <LogoMark className="h-8 w-8 text-[--accent-gold] group-hover:text-[--accent-gold-bright] transition-colors" />
-          <span className="hidden font-heading text-lg tracking-wider sm:inline">
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-[--text-primary] group transition-transform duration-300 hover:scale-[1.03]"
+        >
+          <LogoMark className="h-8 w-8 brightness-100 transition-all duration-300 group-hover:brightness-125" />
+          <span className="hidden font-heading text-lg tracking-wider sm:inline transition-colors duration-300 group-hover:text-[--accent-gold]">
             {SITE_NAME}
           </span>
         </Link>
@@ -31,8 +34,10 @@ export function Nav() {
               className={cn(
                 "relative px-3 py-2 text-sm font-body tracking-wide transition-colors duration-200",
                 "hover:text-[--accent-gold]",
+                "after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[1px] after:bg-[--accent-gold]",
+                "after:scale-x-0 after:origin-center after:transition-transform after:duration-250 hover:after:scale-x-100",
                 pathname === link.href
-                  ? "text-[--accent-gold] after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[1px] after:bg-[--accent-gold]"
+                  ? "text-[--accent-gold] after:scale-x-100"
                   : "text-[--text-secondary]",
               )}
             >
@@ -46,7 +51,7 @@ export function Nav() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full text-[--accent-gold] hover:text-[--accent-gold-bright] md:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full text-[--accent-gold] hover:text-[--accent-gold-bright] md:hidden transition-transform duration-200 hover:scale-110"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -55,7 +60,7 @@ export function Nav() {
       </nav>
 
       {mobileOpen && (
-        <div className="border-t border-[--border-hairline] bg-[--bg-base] md:hidden">
+        <div className="border-t border-[--border-hairline] bg-[--bg-base] md:hidden animate-fade-in-up">
           <div className="flex flex-col px-4 py-3 space-y-1">
             {NAV_LINKS.map((link) => (
               <Link
@@ -63,7 +68,7 @@ export function Nav() {
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
                 className={cn(
-                  "px-3 py-2.5 text-sm font-body tracking-wide rounded-md transition-colors duration-200",
+                  "px-3 py-2.5 text-sm font-body tracking-wide rounded-md transition-all duration-200",
                   "hover:text-[--accent-gold] hover:bg-[--surface-alt]",
                   pathname === link.href
                     ? "text-[--accent-gold] bg-[--surface-alt]"

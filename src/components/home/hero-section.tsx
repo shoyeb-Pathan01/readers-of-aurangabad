@@ -1,6 +1,6 @@
 "use client"
 
-import { ScallopedCorner, DoubleBorderFrame } from "@/lib/mughal-patterns"
+import { ScallopedCorner, DoubleBorderFrame, IwanGateway } from "@/lib/mughal-patterns"
 import { GoldLink } from "@/components/ui/gold-button"
 import { FadeIn } from "@/components/ui/motion-wrapper"
 import dynamic from "next/dynamic"
@@ -24,7 +24,7 @@ export function HeroSection() {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
+      <IwanGateway className="relative z-10 mx-auto max-w-4xl px-4 text-center py-12">
         <FadeIn>
           <div className="relative inline-block px-8 py-6">
             <DoubleBorderFrame className="absolute inset-0 text-[--accent-gold]" />
@@ -65,7 +65,7 @@ export function HeroSection() {
             <span className="inline-block h-px w-8 bg-[--border-hairline]" />
           </div>
         </FadeIn>
-      </div>
+      </IwanGateway>
 
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[--bg-base] to-transparent" />
     </section>

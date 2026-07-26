@@ -197,3 +197,114 @@ export function LogoMark({ className }: { className?: string }) {
     />
   )
 }
+
+export function ChhatriLoader({ className }: { className?: string }) {
+  return (
+    <svg
+      className={`chhatri-loader ${className || ""}`}
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M12 2L4 10h3v10h10V10h3L12 2z"
+        stroke="currentColor"
+        strokeWidth="1"
+        fill="none"
+        opacity="0.6"
+      />
+      <circle cx="12" cy="12" r="2" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.3" />
+      <line x1="12" y1="14" x2="12" y2="20" stroke="currentColor" strokeWidth="0.5" opacity="0.4" />
+      <line x1="8" y1="20" x2="16" y2="20" stroke="currentColor" strokeWidth="0.5" opacity="0.3" />
+    </svg>
+  )
+}
+
+export function MinaretDivider({ className }: { className?: string }) {
+  return (
+    <div className={`relative flex items-center justify-center ${className || ""}`}>
+      <div className="absolute left-[20%] top-0 bottom-0 w-[1px] bg-[--border-hairline] opacity-10" />
+      <div className="absolute right-[20%] top-0 bottom-0 w-[1px] bg-[--border-hairline] opacity-10" />
+      <svg
+        width="80"
+        height="30"
+        viewBox="0 0 80 30"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="text-[--accent-gold]"
+        aria-hidden="true"
+      >
+        <path
+          d="M40 25V5 Q38 3 35 5 Q32 7 30 5 Q28 3 25 5 Q22 7 20 5 Q18 3 15 5 Q12 7 10 5 Q8 3 5 5 Q3 7 0 5"
+          stroke="currentColor"
+          strokeWidth="0.5"
+          fill="none"
+          opacity="0.4"
+        />
+        <circle cx="40" cy="2" r="2" stroke="currentColor" strokeWidth="0.3" fill="none" opacity="0.25" />
+      </svg>
+    </div>
+  )
+}
+
+export function IwanGateway({ children, className }: { children: React.ReactNode; className?: string }) {
+  return (
+    <div className={`relative ${className || ""}`}>
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        viewBox="0 0 800 600"
+        preserveAspectRatio="none"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          d="M100 600V200 Q100 50 400 20 Q700 50 700 200V600"
+          stroke="var(--border-hairline)"
+          strokeWidth="0.5"
+          fill="none"
+          opacity="0.15"
+        />
+        <path
+          d="M120 600V200 Q120 70 400 35 Q680 70 680 200V600"
+          stroke="var(--border-hairline)"
+          strokeWidth="0.3"
+          fill="none"
+          opacity="0.08"
+        />
+        <rect
+          x="90" y="595" width="620" height="5"
+          stroke="var(--border-hairline)"
+          strokeWidth="0.3"
+          fill="none"
+          opacity="0.1"
+        />
+      </svg>
+      <div className="relative z-10">{children}</div>
+    </div>
+  )
+}
+
+export function CharbaghGrid({ children, className }: { children: React.ReactNode; className?: string }) {
+  return (
+    <div className={`relative ${className || ""}`}>
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.03] dark:opacity-[0.04]"
+        viewBox="0 0 400 400"
+        preserveAspectRatio="none"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <line x1="200" y1="0" x2="200" y2="400" stroke="currentColor" strokeWidth="0.5" />
+        <line x1="0" y1="200" x2="400" y2="200" stroke="currentColor" strokeWidth="0.5" />
+        <circle cx="200" cy="200" r="40" stroke="currentColor" strokeWidth="0.3" fill="none" />
+        <circle cx="200" cy="200" r="60" stroke="currentColor" strokeWidth="0.2" fill="none" />
+      </svg>
+      <div className="relative z-10">{children}</div>
+    </div>
+  )
+}

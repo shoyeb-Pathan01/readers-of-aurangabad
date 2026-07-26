@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link"
+import { useRef } from "react"
 import { cn } from "@/lib/utils"
 
 interface ArchCardProps {
@@ -8,19 +11,51 @@ interface ArchCardProps {
 }
 
 export function ArchCard({ children, className, href }: ArchCardProps) {
+  const cardRef = useRef<HTMLDivElement>(null)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return
+    const rect = cardRef.current.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    const centerX = rect.width / 2
+    const centerY = rect.height / 2
+    const rotateX = ((y - centerY) / centerY) * -3
+    const rotateY = ((x - centerX) / centerX) * 3
+    cardRef.current.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+  }
+
+  const handleMouseLeave = () => {
+    if (!cardRef.current) return
+    cardRef.current.style.transform = "perspective(800px) rotateX(0deg) rotateY(0deg)"
+    cardRef.current.style.transition = "transform 0.5s ease"
+    setTimeout(() => {
+      if (cardRef.current) {
+        cardRef.current.style.transition = ""
+      }
+    }, 500)
+  }
+
   const shared = cn(
     "relative overflow-hidden rounded-b-lg",
     "bg-[--surface-card] border border-[--border-hairline]",
-    "amber-shadow",
-    "transition-all duration-300",
-    href && "hover:-translate-y-1.5 hover:shadow-[0_8px_32px_-8px_var(--shadow-card)]",
+    "amber-shadow transition-all duration-300",
+    "hover:muqarnas-shadow hover:-translate-y-1.5",
+    "hover:border-[--accent-gold]",
+    href && "cursor-pointer",
     className,
   )
 
   const content = (
-    <>
+    <div
+      ref={cardRef}
+      className="h-full"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ transformStyle: "preserve-3d" }}
+    >
       <svg
-        className="absolute top-0 left-0 w-full h-8 md:h-10 pointer-events-none"
+        className="absolute top-0 left-0 w-full h-8 md:h-10 pointer-events-none opacity-80"
         viewBox="0 0 400 40"
         preserveAspectRatio="none"
         fill="none"
@@ -39,7 +74,7 @@ export function ArchCard({ children, className, href }: ArchCardProps) {
         />
       </svg>
       <div className="pt-8 md:pt-10 h-full">{children}</div>
-    </>
+    </div>
   )
 
   if (href) {
