@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  /* ===== Light Theme (default / fallback) ===== */
+  --bg-base: #FAF5EB;
+  --bg-alt: #FFFDF8;
+  --surface-card: #F3EAD8;
+  --surface-alt: #F3EAD8;
+  --border-hairline: #B8872E;
+
+  --text-primary: #4B2E18;
+  --text-secondary: #7A6650;
+
+  --accent-gold: #9C6F1F;
+  --accent-gold-bright: #7A5416;
+  --accent-burgundy: #7A2E2E;
+  --accent-forest: #5E6F3A;
+
+  --shadow-card: rgba(184, 135, 46, 0.12);
+
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Inter", sans-serif;
+  --font-quote: "Libre Baskerville", serif;
+}
+
+[data-theme="dark"] {
+  --bg-base: #1C120A;
+  --bg-alt: #2A1B10;
+  --surface-card: #332214;
+  --surface-alt: #2A1B10;
+  --border-hairline: #C89B4A;
+
+  --text-primary: #F2E8D5;
+  --text-secondary: #C9B899;
+
+  --accent-gold: #C89B4A;
+  --accent-gold-bright: #E4C173;
+  --accent-burgundy: #7A2E2E;
+  --accent-forest: #3F4D2A;
+
+  --shadow-card: rgba(200, 155, 74, 0.08);
+
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Inter", sans-serif;
+  --font-quote: "Libre Baskerville", serif;
+}
+
+@theme inline {
+  --color-bg-base: var(--bg-base);
+  --color-bg-alt: var(--bg-alt);
+  --color-surface-card: var(--surface-card);
+  --color-surface-alt: var(--surface-alt);
+  --color-border-hairline: var(--border-hairline);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent-gold: var(--accent-gold);
+  --color-accent-gold-bright: var(--accent-gold-bright);
+  --color-accent-burgundy: var(--accent-burgundy);
+  --color-accent-forest: var(--accent-forest);
+
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  --font-quote: var(--font-quote);
+}
+
+@layer base {
+  * {
+    border-color: var(--border-hairline);
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-body), sans-serif;
+    transition: background-color 300ms ease, color 300ms ease;
+  }
+
+  ::selection {
+    background-color: var(--accent-gold);
+    color: var(--bg-base);
+  }
+
+  ::-moz-selection {
+    background-color: var(--accent-gold);
+    color: var(--bg-base);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg-base);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-hairline);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-gold);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .jali-bg {
+    position: relative;
+  }
+
+  .jali-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 100h200M100 0v200M0 0l200 200M200 0L0 200M0 50h200M0 150h200M50 0v200M150 0v200' stroke='%23C89B4A' stroke-width='0.3' opacity='0.06'/%3E%3Cpath d='M100 50a50 50 0 010 100 50 50 0 010-100z' stroke='%23C89B4A' stroke-width='0.2' fill='none' opacity='0.04'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  [data-theme="dark"] .jali-bg::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 100h200M100 0v200M0 0l200 200M200 0L0 200M0 50h200M0 150h200M50 0v200M150 0v200' stroke='%23C89B4A' stroke-width='0.3' opacity='0.08'/%3E%3Cpath d='M100 50a50 50 0 010 100 50 50 0 010-100z' stroke='%23C89B4A' stroke-width='0.2' fill='none' opacity='0.05'/%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .arch-card-clip {
+    clip-path: polygon(0 24px, 24px 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0 100%);
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 20px -4px var(--accent-gold);
+  }
+
+  .amber-shadow {
+    box-shadow: 0 4px 24px -8px var(--shadow-card);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
