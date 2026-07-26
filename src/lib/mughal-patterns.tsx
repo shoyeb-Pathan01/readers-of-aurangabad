@@ -188,65 +188,12 @@ export function DoubleBorderFrame({ className }: { className?: string }) {
 
 export function LogoMark({ className }: { className?: string }) {
   return (
-    <svg
+    <img
+      src="/logo.png"
+      alt="Readers of Aurangabad"
       className={className}
-      width="48"
-      height="48"
-      viewBox="0 0 48 48"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <circle cx="24" cy="24" r="22" stroke="currentColor" strokeWidth="0.8" fill="none" opacity="0.5" />
-      <circle cx="24" cy="24" r="19" stroke="currentColor" strokeWidth="0.4" fill="none" opacity="0.3" />
-      <path
-        d="M24 8Q16 14 16 24Q16 34 24 40Q32 34 32 24Q32 14 24 8Z"
-        stroke="currentColor"
-        strokeWidth="0.6"
-        fill="none"
-        opacity="0.4"
-      />
-      <path
-        d="M24 12Q19 17 19 24Q19 31 24 36Q29 31 29 24Q29 17 24 12Z"
-        stroke="currentColor"
-        strokeWidth="0.4"
-        fill="none"
-        opacity="0.25"
-      />
-      <path
-        d="M16 20L32 20M16 24L32 24M16 28L32 28"
-        stroke="currentColor"
-        strokeWidth="0.4"
-        opacity="0.35"
-      />
-      <path
-        d="M20 16Q22 18 24 16Q26 18 28 16"
-        stroke="currentColor"
-        strokeWidth="0.3"
-        fill="none"
-        opacity="0.3"
-      />
-      <path
-        d="M20 32Q22 30 24 32Q26 30 28 32"
-        stroke="currentColor"
-        strokeWidth="0.3"
-        fill="none"
-        opacity="0.3"
-      />
-      <path
-        d="M14 8L10 12L14 16"
-        stroke="currentColor"
-        strokeWidth="0.5"
-        fill="none"
-        opacity="0.35"
-      />
-      <path
-        d="M34 8L38 12L34 16"
-        stroke="currentColor"
-        strokeWidth="0.5"
-        fill="none"
-        opacity="0.35"
-      />
-    </svg>
+      width={48}
+      height={48}
+    />
   )
 }
