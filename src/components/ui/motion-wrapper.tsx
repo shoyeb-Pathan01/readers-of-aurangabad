@@ -17,9 +17,7 @@ export function FadeIn({ children, className, delay = 0, y = 16, duration = 0.5 
   const [hasBeenVisible, setHasBeenVisible] = useState(false)
 
   useEffect(() => {
-    if (inView && !hasBeenVisible) {
-      setHasBeenVisible(true)
-    }
+    if (inView && !hasBeenVisible) setHasBeenVisible(true)
   }, [inView, hasBeenVisible])
 
   const isVisible = hasBeenVisible || inView
@@ -29,7 +27,7 @@ export function FadeIn({ children, className, delay = 0, y = 16, duration = 0.5 
       ref={ref}
       initial={{ opacity: 0, y }}
       animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y }}
-      transition={{ duration, delay, ease: "easeOut" }}
+      transition={{ duration, delay, ease: [0.25, 0.1, 0.25, 1] }}
       className={className}
     >
       {children}
@@ -49,9 +47,7 @@ export function StaggerContainer({ children, className, staggerDelay = 0.1 }: St
   const [hasBeenVisible, setHasBeenVisible] = useState(false)
 
   useEffect(() => {
-    if (inView && !hasBeenVisible) {
-      setHasBeenVisible(true)
-    }
+    if (inView && !hasBeenVisible) setHasBeenVisible(true)
   }, [inView, hasBeenVisible])
 
   const isVisible = hasBeenVisible || inView
@@ -62,7 +58,7 @@ export function StaggerContainer({ children, className, staggerDelay = 0.1 }: St
       initial="hidden"
       animate={isVisible ? "visible" : "hidden"}
       variants={{
-        visible: { transition: { staggerChildren: staggerDelay } },
+        visible: { transition: { staggerChildren: staggerDelay, ease: [0.25, 0.1, 0.25, 1] } },
         hidden: {},
       }}
       className={className}
@@ -76,9 +72,43 @@ export function StaggerItem({ children, className }: { children: React.ReactNode
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 16 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+        hidden: { opacity: 0, y: 24 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } },
       }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
+export function ClipReveal({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const inView = useInView(ref, { once: true, margin: "-50px" })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
+      animate={inView ? { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" } : {}}
+      transition={{ duration: 1, delay, ease: [0.65, 0, 0.35, 1] }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
+export function ScaleReveal({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const inView = useInView(ref, { once: true, margin: "-50px" })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ scale: 0.92, opacity: 0 }}
+      animate={inView ? { scale: 1, opacity: 1 } : {}}
+      transition={{ duration: 0.8, delay, ease: [0.34, 1.56, 0.64, 1] }}
       className={className}
     >
       {children}
@@ -107,27 +137,12 @@ export function CountUp({
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
     >
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1 } : { opacity: 0 }}
-      >
-        <CountAnimation end={end} duration={duration} inView={inView} suffix={suffix} />
-      </motion.span>
+      <CountAnimation end={end} duration={duration} inView={inView} suffix={suffix} />
     </motion.span>
   )
 }
 
-function CountAnimation({
-  end,
-  duration,
-  inView,
-  suffix,
-}: {
-  end: number
-  duration: number
-  inView: boolean
-  suffix: string
-}) {
+function CountAnimation({ end, duration, inView, suffix }: { end: number; duration: number; inView: boolean; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null)
   const hasStarted = useRef(false)
 
@@ -140,12 +155,8 @@ function CountAnimation({
         const progress = Math.min(elapsed / (duration * 1000), 1)
         const eased = 1 - Math.pow(1 - progress, 3)
         const current = Math.floor(eased * end)
-        if (ref.current) {
-          ref.current.textContent = `${current}${suffix}`
-        }
-        if (progress < 1) {
-          requestAnimationFrame(animate)
-        }
+        if (ref.current) ref.current.textContent = `${current}${suffix}`
+        if (progress < 1) requestAnimationFrame(animate)
       }
       requestAnimationFrame(animate)
     }

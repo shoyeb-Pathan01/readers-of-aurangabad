@@ -1,46 +1,45 @@
 "use client"
 
-import { Users, BookOpen, MessageCircle, MapPin } from "lucide-react"
 import { SectionHeader } from "@/components/ui/section-header"
-import { StaggerContainer, StaggerItem, CountUp } from "@/components/ui/motion-wrapper"
+import { ArchCard, ArchCardContent } from "@/components/ui/arch-card"
+import { ScallopedCorner } from "@/lib/mughal-patterns"
+import { ScaleReveal, CountUp } from "@/components/ui/motion-wrapper"
+import { BookOpen, Users, Calendar, MapPin } from "lucide-react"
 
 const stats = [
-  { icon: Users, value: 120, label: "Active Members", suffix: "+" },
-  { icon: BookOpen, value: 250, label: "Books Discussed", suffix: "+" },
-  { icon: MessageCircle, value: 48, label: "Meetups Held", suffix: "" },
-  { icon: MapPin, value: 15, label: "Venues Visited", suffix: "+" },
+  { icon: Users, label: "Active Members", value: 12, suffix: "+" },
+  { icon: Calendar, label: "Sunday Meetups", value: 48, suffix: "+" },
+  { icon: BookOpen, label: "Books Discussed", value: 150, suffix: "+" },
+  { icon: MapPin, label: "Venues Visited", value: 8, suffix: "" },
 ]
 
 export function StatsSection() {
   return (
-    <section className="py-20 md:py-28">
-      <div className="jali-bg">
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Our Community in Numbers"
-            subtitle="A growing movement of readers in Aurangabad"
-          />
+    <section className="py-24 md:py-36 bg-texture overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeader
+          title="Our Reach"
+          subtitle="Growing one Sunday at a time"
+        />
 
-          <StaggerContainer className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
-            {stats.map((stat) => {
-              const Icon = stat.icon
-              return (
-                <StaggerItem key={stat.label}>
-                  <div className="group flex flex-col items-center rounded-lg border border-[--border-hairline] bg-[--surface-card] px-4 py-8 amber-shadow transition-all duration-300 hover:muqarnas-shadow hover:-translate-y-1.5 hover:border-[--accent-gold]">
-                    <Icon className="mb-3 h-6 w-6 text-[--accent-gold] transition-all duration-300 group-hover:scale-110 group-hover:text-[--accent-gold-bright]" />
-                    <CountUp
-                      end={stat.value}
-                      suffix={stat.suffix}
-                      className="font-heading text-3xl tracking-wider text-[--accent-gold] sm:text-4xl"
-                    />
-                    <p className="mt-1 text-sm text-[--text-secondary] transition-colors duration-300 group-hover:text-[--text-primary]">
-                      {stat.label}
+        <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
+          {stats.map((s) => {
+            const Icon = s.icon
+            return (
+              <ScaleReveal key={s.label}>
+                <ArchCard className="h-full">
+                  <ArchCardContent className="flex flex-col items-center justify-center py-8 px-4">
+                    <Icon className="h-8 w-8 text-[--accent-gold] mb-4" />
+                    <p className="font-heading text-3xl sm:text-4xl md:text-5xl text-[--accent-gold]">
+                      <CountUp end={s.value} duration={2} />
+                      {s.suffix}
                     </p>
-                  </div>
-                </StaggerItem>
-              )
-            })}
-          </StaggerContainer>
+                    <p className="mt-2 text-xs sm:text-sm text-[--text-secondary]">{s.label}</p>
+                  </ArchCardContent>
+                </ArchCard>
+              </ScaleReveal>
+            )
+          })}
         </div>
       </div>
     </section>

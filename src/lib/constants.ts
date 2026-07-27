@@ -13,8 +13,9 @@ export const NAV_LINKS = [
 ] as const
 
 export const SOCIAL_LINKS = {
-  instagram: "https://instagram.com/readersofaurangabad",
-  whatsapp: "https://chat.whatsapp.com/readersofaurangabad",
+  instagram: "https://www.instagram.com/readers.of.aurangabad?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+  whatsapp: "https://chat.whatsapp.com/DsTlkqgFef5LX5cLFdm2dO",
+  telegram: "https://t.me/readersofaurangabad",
   email: "hello@readersofaurangabad.in",
 } as const
 

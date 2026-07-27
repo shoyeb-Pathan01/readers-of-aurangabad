@@ -52,6 +52,11 @@ export function Footer() {
                     WhatsApp
                   </a>
                 </li>
+                <li>
+                  <a href={SOCIAL_LINKS.telegram} target="_blank" rel="noopener noreferrer" className="text-sm text-[--text-secondary] hover:text-[--accent-gold] transition-colors">
+                    Telegram
+                  </a>
+                </li>
               </ul>
             </div>
 

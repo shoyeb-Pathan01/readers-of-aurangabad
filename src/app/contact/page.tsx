@@ -1,6 +1,7 @@
 "use client"
 
 import { Mail, MapPin, Send } from "lucide-react"
+import { SOCIAL_LINKS } from "@/lib/constants"
 import { SectionHeader } from "@/components/ui/section-header"
 import { ArchCard, ArchCardContent } from "@/components/ui/arch-card"
 import { GoldButton } from "@/components/ui/gold-button"
@@ -41,9 +42,9 @@ export default function ContactPage() {
                 <p className="mt-2 text-sm text-[--text-secondary]">
                   Follow us on Instagram or join our WhatsApp group for the latest updates and discussions.
                 </p>
-                <div className="mt-4 flex gap-3">
+                <div className="mt-4 flex flex-wrap gap-3">
                   <a
-                    href="https://instagram.com/readersofaurangabad"
+                    href={SOCIAL_LINKS.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="rounded-md border border-[--border-hairline] px-4 py-2 text-xs text-[--accent-gold] hover:bg-[--accent-gold] hover:text-[--bg-base] transition-colors"
@@ -51,12 +52,20 @@ export default function ContactPage() {
                     Instagram
                   </a>
                   <a
-                    href="https://chat.whatsapp.com/readersofaurangabad"
+                    href={SOCIAL_LINKS.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="rounded-md border border-[--border-hairline] px-4 py-2 text-xs text-[--accent-gold] hover:bg-[--accent-gold] hover:text-[--bg-base] transition-colors"
                   >
                     WhatsApp
+                  </a>
+                  <a
+                    href={SOCIAL_LINKS.telegram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-md border border-[--border-hairline] px-4 py-2 text-xs text-[--accent-gold] hover:bg-[--accent-gold] hover:text-[--bg-base] transition-colors"
+                  >
+                    Telegram
                   </a>
                 </div>
               </div>
