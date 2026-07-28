@@ -26,8 +26,11 @@ export function GoldButton({
     const rect = btnRef.current.getBoundingClientRect()
     const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2
     const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2
-    if (magnetic) setMagnetPos({ x: x * 6, y: y * 6 })
-    setRippleStyle({ "--mouse-x": `${((e.clientX - rect.left) / rect.width) * 100}%`, "--mouse-y": `${((e.clientY - rect.top) / rect.height) * 100}%` } as React.CSSProperties)
+    if (magnetic) setMagnetPos({ x: x * 5, y: y * 5 })
+    setRippleStyle({
+      "--mouse-x": `${((e.clientX - rect.left) / rect.width) * 100}%`,
+      "--mouse-y": `${((e.clientY - rect.top) / rect.height) * 100}%`,
+    } as React.CSSProperties)
   }, [magnetic])
 
   const handleMouseLeave = useCallback(() => {
@@ -41,20 +44,20 @@ export function GoldButton({
         "relative overflow-hidden",
         "inline-flex items-center justify-center gap-2",
         "font-body tracking-wide",
-        "transition-all duration-300",
+        "transition-all duration-400 ease-out",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--accent-gold] focus-visible:ring-offset-2 focus-visible:ring-offset-[--bg-base]",
         "active:scale-[0.97]",
-        size === "sm" && "px-4 py-2 text-xs rounded-md",
-        size === "md" && "px-6 py-3 text-sm rounded-lg",
-        size === "lg" && "px-8 py-4 text-base rounded-lg",
+        size === "sm" && "px-5 py-2.5 text-sm rounded-sm",
+        size === "md" && "px-7 py-3.5 text-base rounded-sm",
+        size === "lg" && "px-10 py-4.5 text-lg rounded-sm",
         variant === "primary" &&
-          "border border-[--accent-gold] text-[--accent-gold] hover:text-[--bg-base]",
+          "border border-[--accent-gold] text-[--accent-gold] hover:text-[#2A1A0A]",
         variant === "primary" &&
-          "before:absolute before:inset-0 before:bg-[--accent-gold] before:-translate-x-full before:transition-transform before:duration-300 hover:before:translate-x-0",
+          "before:absolute before:inset-0 before:bg-[--accent-gold] before:translate-y-full before:transition-transform before:duration-400 before:ease-out hover:before:translate-y-0",
         variant === "primary" && "[&>*]:relative [&>*]:z-10",
         variant === "secondary" &&
-          "bg-[--surface-alt] text-[--text-primary] border border-[--border-hairline] hover:border-[--accent-gold] hover:text-[--accent-gold] rounded-lg",
-        variant === "secondary" && "hover:bg-[--surface-card]",
+          "bg-[--surface-alt] text-[--text-primary] border border-[--border-hairline] hover:border-[--accent-gold] hover:text-[--accent-gold] rounded-sm",
+        variant === "secondary" && "hover:card-shadow-lift",
         "ripple",
         className,
       )}
@@ -94,7 +97,7 @@ export function GoldLink({
     const rect = linkRef.current.getBoundingClientRect()
     const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2
     const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2
-    setMagnetPos({ x: x * 6, y: y * 6 })
+    setMagnetPos({ x: x * 5, y: y * 5 })
   }, [magnetic])
 
   const handleMouseLeave = useCallback(() => {
@@ -109,20 +112,20 @@ export function GoldLink({
         "relative overflow-hidden",
         "inline-flex items-center justify-center gap-2",
         "font-body tracking-wide",
-        "transition-all duration-300",
+        "transition-all duration-400 ease-out",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--accent-gold] focus-visible:ring-offset-2 focus-visible:ring-offset-[--bg-base]",
         "active:scale-[0.97]",
-        size === "sm" && "px-4 py-2 text-xs rounded-md",
-        size === "md" && "px-6 py-3 text-sm rounded-lg",
-        size === "lg" && "px-8 py-4 text-base rounded-lg",
+        size === "sm" && "px-5 py-2.5 text-sm rounded-sm",
+        size === "md" && "px-7 py-3.5 text-base rounded-sm",
+        size === "lg" && "px-10 py-4.5 text-lg rounded-sm",
         variant === "primary" &&
-          "border border-[--accent-gold] text-[--accent-gold] hover:text-[--bg-base]",
+          "border border-[--accent-gold] text-[--accent-gold] hover:text-[#2A1A0A]",
         variant === "primary" &&
-          "before:absolute before:inset-0 before:bg-[--accent-gold] before:-translate-x-full before:transition-transform before:duration-300 hover:before:translate-x-0",
+          "before:absolute before:inset-0 before:bg-[--accent-gold] before:translate-y-full before:transition-transform before:duration-400 before:ease-out hover:before:translate-y-0",
         variant === "primary" && "[&>*]:relative [&>*]:z-10",
         variant === "secondary" &&
-          "bg-[--surface-alt] text-[--text-primary] border border-[--border-hairline] hover:border-[--accent-gold] hover:text-[--accent-gold] rounded-lg",
-        variant === "secondary" && "hover:bg-[--surface-card]",
+          "bg-[--surface-alt] text-[--text-primary] border border-[--border-hairline] hover:border-[--accent-gold] hover:text-[--accent-gold] rounded-sm",
+        variant === "secondary" && "hover:card-shadow-lift",
         "ripple",
         className,
       )}

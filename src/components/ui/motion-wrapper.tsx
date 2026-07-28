@@ -11,7 +11,7 @@ interface FadeInProps {
   duration?: number
 }
 
-export function FadeIn({ children, className, delay = 0, y = 16, duration = 0.5 }: FadeInProps) {
+export function FadeIn({ children, className, delay = 0, y = 24, duration = 0.8 }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: false, margin: "-30px" })
   const [hasBeenVisible, setHasBeenVisible] = useState(false)
@@ -72,8 +72,8 @@ export function StaggerItem({ children, className }: { children: React.ReactNode
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 24 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } },
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
       }}
       className={className}
     >

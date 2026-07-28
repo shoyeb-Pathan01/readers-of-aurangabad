@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
-import { BookOpen, Search } from "lucide-react"
+import { BookOpen, Star, Clock } from "lucide-react"
 import { SectionHeader } from "@/components/ui/section-header"
 import { ArchCard, ArchCardContent } from "@/components/ui/arch-card"
-import { GoldButton } from "@/components/ui/gold-button"
+import { GoldLink } from "@/components/ui/gold-button"
 
 export const metadata: Metadata = {
   title: "Books",
@@ -10,74 +10,63 @@ export const metadata: Metadata = {
 }
 
 const books = [
-  { title: "The Alchemist", author: "Paulo Coelho", category: "Fiction", difficulty: "Easy", suggestedBy: "Community Pick" },
-  { title: "Atomic Habits", author: "James Clear", category: "Self-Development", difficulty: "Easy", suggestedBy: "Ananya P." },
-  { title: "Sapiens", author: "Yuval Noah Harari", category: "Non-Fiction", difficulty: "Medium", suggestedBy: "Rahul D." },
-  { title: "The God of Small Things", author: "Arundhati Roy", category: "Fiction", difficulty: "Medium", suggestedBy: "Priya S." },
-  { title: "Thinking, Fast and Slow", author: "Daniel Kahneman", category: "Psychology", difficulty: "Hard", suggestedBy: "Vikram M." },
-  { title: "Wings of Fire", author: "A.P.J. Abdul Kalam", category: "Biography", difficulty: "Easy", suggestedBy: "Neha K." },
-  { title: "1984", author: "George Orwell", category: "Fiction", difficulty: "Medium", suggestedBy: "Arjun R." },
-  { title: "Deep Work", author: "Cal Newport", category: "Productivity", difficulty: "Medium", suggestedBy: "Community Pick" },
+  { title: "The Alchemist", author: "Paulo Coelho", category: "Fiction", difficulty: "Easy", suggestedBy: "Community Pick", rating: 4.5, pages: 208 },
+  { title: "Atomic Habits", author: "James Clear", category: "Self-Development", difficulty: "Easy", suggestedBy: "Ananya P.", rating: 4.5, pages: 320 },
+  { title: "Sapiens", author: "Yuval Noah Harari", category: "Non-Fiction", difficulty: "Medium", suggestedBy: "Rahul D.", rating: 4.5, pages: 464 },
+  { title: "The God of Small Things", author: "Arundhati Roy", category: "Fiction", difficulty: "Medium", suggestedBy: "Priya S.", rating: 4, pages: 340 },
+  { title: "Thinking, Fast and Slow", author: "Daniel Kahneman", category: "Psychology", difficulty: "Hard", suggestedBy: "Vikram M.", rating: 4, pages: 512 },
+  { title: "Wings of Fire", author: "A.P.J. Abdul Kalam", category: "Biography", difficulty: "Easy", suggestedBy: "Neha K.", rating: 4.5, pages: 180 },
+  { title: "1984", author: "George Orwell", category: "Fiction", difficulty: "Medium", suggestedBy: "Arjun R.", rating: 4.5, pages: 328 },
+  { title: "Deep Work", author: "Cal Newport", category: "Productivity", difficulty: "Medium", suggestedBy: "Community Pick", rating: 4, pages: 296 },
 ]
 
-const categories = ["All", "Fiction", "Non-Fiction", "Self-Development", "Psychology", "Biography", "Productivity"]
+const difficultyColors: Record<string, string> = {
+  Easy: "text-[--accent-forest] border-[--accent-forest]/40 bg-[--accent-forest]/8",
+  Medium: "text-[--accent-gold] border-[--accent-gold]/40 bg-[--accent-gold]/8",
+  Hard: "text-[--accent-burgundy] border-[--accent-burgundy]/40 bg-[--accent-burgundy]/8",
+}
 
 export default function BooksPage() {
   return (
-    <div className="py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="py-36 md:py-44">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <SectionHeader
           title="Books"
           subtitle="Curated recommendations from our community — find your next read"
         />
 
-        <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="relative flex-1 max-w-md">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[--text-secondary]" />
-            <input
-              type="search"
-              placeholder="Search books..."
-              className="w-full rounded-md border border-[--border-hairline] bg-[--surface-card] py-2 pl-10 pr-3 text-sm text-[--text-primary] placeholder-[--text-secondary] focus:border-[--accent-gold] focus:outline-none focus:ring-1 focus:ring-[--accent-gold]"
-            />
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                className="rounded-md border border-[--border-hairline] px-3 py-1.5 text-xs text-[--text-secondary] hover:border-[--accent-gold] hover:text-[--accent-gold] transition-colors"
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="mt-16 md:mt-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {books.map((book) => (
-            <ArchCard key={book.title} className="h-full">
-              <ArchCardContent className="flex flex-col pt-6">
-                <div className="mx-auto mb-4 flex h-36 w-28 items-center justify-center rounded border border-[--border-hairline] bg-[--bg-base] text-[--accent-gold] amber-shadow">
-                  <BookOpen className="h-8 w-8" />
+            <ArchCard key={book.title} className="h-full group">
+              <ArchCardContent className="flex flex-col pt-8 pb-6">
+                <div className="mx-auto mb-5 flex h-44 w-32 items-center justify-center rounded-sm border border-[--border-hairline] bg-[--bg-base] card-shadow-warm transition-all duration-500 group-hover:card-shadow-lift group-hover:-translate-y-1.5 group-hover:border-[--accent-gold]">
+                  <BookOpen className="h-10 w-10 text-[--accent-gold]" />
                 </div>
-                <h3 className="font-heading text-base tracking-wide text-[--text-primary]">{book.title}</h3>
-                <p className="text-xs text-[--text-secondary]">{book.author}</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-[--accent-burgundy]/10 px-2 py-0.5 text-[10px] text-[--accent-burgundy]">
+                <h3 className="font-heading text-xl tracking-wide text-[--text-primary] group-hover:text-[--accent-gold] transition-colors duration-400">{book.title}</h3>
+                <p className="text-sm text-[--text-secondary] mt-0.5">{book.author}</p>
+                <div className="mt-1 flex items-center gap-1.5 text-xs text-[--accent-gold]">
+                  <Star className="h-3 w-3 fill-[--accent-gold]" />
+                  <span>{book.rating}</span>
+                  <span className="text-[--text-secondary]">&middot;</span>
+                  <Clock className="h-3 w-3" />
+                  <span className="text-[--text-secondary]">{book.pages} pages</span>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <span className="rounded-full border border-[--accent-burgundy]/30 px-3 py-1 text-xs text-[--accent-burgundy]">
                     {book.category}
                   </span>
-                  <span className="rounded-full bg-[--accent-forest]/10 px-2 py-0.5 text-[10px] text-[--accent-forest]">
+                  <span className={`rounded-full border px-3 py-1 text-xs ${difficultyColors[book.difficulty]}`}>
                     {book.difficulty}
                   </span>
                 </div>
-                <p className="mt-2 text-xs text-[--text-secondary]">Suggested by {book.suggestedBy}</p>
+                <p className="mt-3 text-xs text-[--text-secondary]">Suggested by {book.suggestedBy}</p>
               </ArchCardContent>
             </ArchCard>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-sm text-[--text-secondary]">
+        <div className="mt-16 text-center">
+          <p className="text-base text-[--text-secondary]">
             Have a book to recommend?{' '}
             <a href="/contact" className="text-[--accent-gold] hover:underline">Suggest it here</a>
           </p>

@@ -9,16 +9,16 @@ interface SectionHeaderProps {
 
 export function SectionHeader({ title, subtitle, className }: SectionHeaderProps) {
   return (
-    <div className={cn("flex flex-col items-center text-center", className)}>
-      <h2 className="font-heading text-2xl tracking-wider text-[--text-primary] sm:text-3xl lg:text-4xl">
+    <div className={cn("flex flex-col items-center text-center max-w-3xl mx-auto", className)}>
+      <h2 className="font-heading text-3xl tracking-wide text-[--text-primary] sm:text-4xl lg:text-5xl leading-tight">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-2 max-w-lg text-sm leading-relaxed text-[--text-secondary] sm:text-base">
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-[--text-secondary] sm:text-lg">
           {subtitle}
         </p>
       )}
-      <DomeDivider className="mt-4 text-[--accent-gold]" />
+      <DomeDivider className="mt-6 text-[--accent-gold]" />
     </div>
   )
 }
