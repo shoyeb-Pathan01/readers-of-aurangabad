@@ -25,25 +25,25 @@ export function FeaturedQuoteSection() {
   const quote = quotes[current]
 
   return (
-    <section className="py-24 md:py-28 bg-texture warm-light">
+    <section className="py-20 md:py-24 lg:py-32 bg-texture warm-light">
       <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-10">
         <SectionHeader title="A Moment with Books" subtitle="Words that inspire our reading journey" />
 
         <ScaleReveal key={current}>
           <ArchCard className="relative mt-12 md:mt-14 text-center">
             <ArchCardContent className="px-8 py-10 md:px-12">
-              <Quote className="mx-auto mb-6 h-9 w-9 text-[--accent-gold] opacity-20" />
+              <Quote className="mx-auto mb-6 h-9 w-9 text-[--accent-brass] opacity-20" />
               <blockquote className="font-quote text-xl leading-relaxed italic text-[--text-primary] sm:text-2xl md:text-3xl">
                 &ldquo;{quote.text}&rdquo;
               </blockquote>
-              <p className="mt-6 text-sm text-[--accent-gold] tracking-wide">&mdash; {quote.author}</p>
+              <p className="mt-6 text-sm text-[--accent-brass] tracking-wide">&mdash; {quote.author}</p>
               <div className="mt-8 flex items-center justify-center gap-2.5">
                 {quotes.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setCurrent(i)}
                     className={`h-1.5 rounded-full transition-all duration-500 ${
-                      i === current ? "w-8 bg-[--accent-gold]" : "w-1.5 bg-[--border-hairline] hover:bg-[--accent-gold]"
+                      i === current ? "w-8 bg-[--accent-brass]" : "w-1.5 bg-[--border-hairline] hover:bg-[--accent-brass]"
                     }`}
                     aria-label={`Show quote ${i + 1}`}
                   />
@@ -51,7 +51,7 @@ export function FeaturedQuoteSection() {
               </div>
               <button
                 onClick={() => setCurrent((p) => (p + 1) % quotes.length)}
-                className="mt-4 inline-flex items-center gap-1.5 text-xs text-[--text-secondary] hover:text-[--accent-gold] transition-colors duration-400 group"
+                className="mt-4 inline-flex items-center gap-1.5 text-xs text-[--text-secondary] hover:text-[--accent-brass] transition-colors duration-400 group"
                 aria-label="Next quote"
               >
                 <RefreshCw className="h-3 w-3 transition-transform duration-400 group-hover:rotate-180" />

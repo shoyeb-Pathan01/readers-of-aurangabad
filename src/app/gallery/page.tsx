@@ -59,13 +59,13 @@ export default function GalleryPage() {
               onClick={() => openLightbox(i)}
             >
               <ArchCardContent className="pt-8 pb-6">
-                <div className="mb-4 flex h-48 items-center justify-center rounded-sm border border-[--border-hairline] bg-[--bg-base] card-shadow-warm transition-all duration-500 group-hover:card-shadow-lift group-hover:border-[--accent-gold] img-zoom">
+                <div className="mb-4 flex h-48 items-center justify-center rounded-sm border border-[--border-hairline] bg-[--bg-base] card-shadow-warm transition-all duration-500 group-hover:card-shadow-lift group-hover:border-[--accent-brass] img-zoom">
                   <div className="text-center px-4 transition-transform duration-600 group-hover:scale-105">
-                    <ImageIcon className="mx-auto h-9 w-9 text-[--accent-gold]" />
+                    <ImageIcon className="mx-auto h-9 w-9 text-[--accent-brass]" />
                     <p className="mt-2 text-xs text-[--text-secondary]">{album.count} photos</p>
                   </div>
                 </div>
-                <h3 className="font-heading text-base tracking-wide text-[--text-primary] group-hover:text-[--accent-gold] transition-colors duration-400">{album.name}</h3>
+                <h3 className="font-heading text-base tracking-wide text-[--text-primary] group-hover:text-[--accent-brass] transition-colors duration-400">{album.name}</h3>
                 <p className="mt-1 text-xs text-[--text-secondary]">{album.location}</p>
                 <p className="mt-1.5 text-xs text-[--text-secondary] italic">{album.description}</p>
               </ArchCardContent>
@@ -80,16 +80,16 @@ export default function GalleryPage() {
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <div className="rounded-sm border border-[--border-hairline] bg-[--surface-card] p-6 max-w-lg">
               <div className="flex h-56 items-center justify-center bg-[--bg-base] rounded-sm mb-4">
-                <ImageIcon className="h-12 w-12 text-[--accent-gold]" />
+                <ImageIcon className="h-12 w-12 text-[--accent-brass]" />
               </div>
               <h3 className="font-heading text-lg tracking-wide text-[--text-primary]">{albums[currentIdx].name}</h3>
               <p className="text-sm text-[--text-secondary] mt-1">{albums[currentIdx].location}</p>
               <p className="text-sm text-[--text-secondary] mt-2">{albums[currentIdx].description}</p>
-              <p className="text-xs text-[--accent-gold] mt-3">{albums[currentIdx].count} photos</p>
+              <p className="text-xs text-[--accent-brass] mt-3">{albums[currentIdx].count} photos</p>
               <div className="flex items-center justify-between mt-4">
                 <button
                   onClick={goPrev}
-                  className="flex items-center gap-1 text-sm text-[--text-secondary] hover:text-[--accent-gold] transition-colors"
+                  className="flex items-center gap-1 text-sm text-[--text-secondary] hover:text-[--accent-brass] transition-colors"
                   aria-label="Previous album"
                 >
                   <ChevronLeft className="h-4 w-4" />
@@ -97,7 +97,7 @@ export default function GalleryPage() {
                 </button>
                 <button
                   onClick={goNext}
-                  className="flex items-center gap-1 text-sm text-[--text-secondary] hover:text-[--accent-gold] transition-colors"
+                  className="flex items-center gap-1 text-sm text-[--text-secondary] hover:text-[--accent-brass] transition-colors"
                   aria-label="Next album"
                 >
                   Next
@@ -107,7 +107,7 @@ export default function GalleryPage() {
             </div>
             <button
               onClick={closeLightbox}
-              className="absolute -top-3 -right-3 flex h-8 w-8 items-center justify-center rounded-full bg-[--surface-card] border border-[--border-hairline] text-[--text-secondary] hover:text-[--accent-gold] transition-colors"
+              className="absolute -top-3 -right-3 flex h-8 w-8 items-center justify-center rounded-full bg-[--surface-card] border border-[--border-hairline] text-[--text-secondary] hover:text-[--accent-brass] transition-colors"
               aria-label="Close lightbox"
             >
               <X className="h-4 w-4" />

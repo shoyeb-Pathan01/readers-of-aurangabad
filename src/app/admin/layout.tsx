@@ -18,7 +18,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <div className="p-4">
           <Link
             href="/"
-            className="mb-6 flex items-center gap-2 text-xs text-[--text-secondary] hover:text-[--accent-gold] transition-colors"
+            className="mb-6 flex items-center gap-2 text-xs text-[--text-secondary] hover:text-[--accent-brass] transition-colors"
           >
             <ArrowLeft className="h-3 w-3" />
             Back to site
@@ -30,7 +30,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="flex items-center gap-3 rounded-md px-3 py-2 text-sm text-[--text-secondary] hover:bg-[--surface-card] hover:text-[--accent-gold] transition-colors"
+                  className="flex items-center gap-3 rounded-md px-3 py-2 text-sm text-[--text-secondary] hover:bg-[--surface-card] hover:text-[--accent-brass] transition-colors"
                 >
                   <Icon className="h-4 w-4" />
                   {item.label}

@@ -16,7 +16,7 @@ export default function AdminSettingsPage() {
 
       <div className="max-w-2xl space-y-6">
         <div className="rounded-lg border border-[--border-hairline] bg-[--surface-card] p-6 amber-shadow">
-          <h2 className="font-heading text-lg tracking-wide text-[--accent-gold]">Site Information</h2>
+          <h2 className="font-heading text-lg tracking-wide text-[--accent-brass]">Site Information</h2>
 
           <form
             onSubmit={(e) => {
@@ -31,7 +31,7 @@ export default function AdminSettingsPage() {
               <input
                 type="text"
                 defaultValue="Readers of Aurangabad"
-                className="w-full rounded-md border border-[--border-hairline] bg-[--bg-base] px-3 py-2 text-sm text-[--text-primary] focus:border-[--accent-gold] focus:outline-none focus:ring-1 focus:ring-[--accent-gold]"
+                className="w-full rounded-md border border-[--border-hairline] bg-[--bg-base] px-3 py-2 text-sm text-[--text-primary] focus:border-[--accent-brass] focus:outline-none focus:ring-1 focus:ring-[--accent-brass]"
               />
             </div>
             <div>
@@ -39,7 +39,7 @@ export default function AdminSettingsPage() {
               <input
                 type="text"
                 defaultValue="Igniting the love for reading in Aurangabad"
-                className="w-full rounded-md border border-[--border-hairline] bg-[--bg-base] px-3 py-2 text-sm text-[--text-primary] focus:border-[--accent-gold] focus:outline-none focus:ring-1 focus:ring-[--accent-gold]"
+                className="w-full rounded-md border border-[--border-hairline] bg-[--bg-base] px-3 py-2 text-sm text-[--text-primary] focus:border-[--accent-brass] focus:outline-none focus:ring-1 focus:ring-[--accent-brass]"
               />
             </div>
             <div>
@@ -47,7 +47,7 @@ export default function AdminSettingsPage() {
               <input
                 type="email"
                 defaultValue="hello@readersofaurangabad.in"
-                className="w-full rounded-md border border-[--border-hairline] bg-[--bg-base] px-3 py-2 text-sm text-[--text-primary] focus:border-[--accent-gold] focus:outline-none focus:ring-1 focus:ring-[--accent-gold]"
+                className="w-full rounded-md border border-[--border-hairline] bg-[--bg-base] px-3 py-2 text-sm text-[--text-primary] focus:border-[--accent-brass] focus:outline-none focus:ring-1 focus:ring-[--accent-brass]"
               />
             </div>
             <div className="flex items-center gap-3">

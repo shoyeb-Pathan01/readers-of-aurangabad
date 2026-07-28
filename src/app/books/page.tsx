@@ -20,7 +20,7 @@ const books = [
 
 export default function BooksPage() {
   return (
-    <div className="py-20 md:py-24">
+    <div className="py-20 md:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <SectionHeader
           title="Books"
@@ -40,8 +40,8 @@ export default function BooksPage() {
                 suggestedBy={book.suggestedBy}
               />
               <div className="mt-3 text-center">
-                <h3 className="font-heading text-sm tracking-wide text-[--text-primary]">{book.title}</h3>
-                <p className="text-xs text-[--text-secondary]">{book.author}</p>
+                <h3 className="font-heading text-xs tracking-wide text-[--text-primary]">{book.title}</h3>
+                <p className="text-[10px] text-[--text-secondary]">{book.author}</p>
               </div>
             </div>
           ))}
@@ -50,7 +50,7 @@ export default function BooksPage() {
         <div className="mt-14 text-center">
           <p className="text-sm text-[--text-secondary]">
             Have a book to recommend?{' '}
-            <a href="/contact" className="text-[--accent-gold] hover:underline">Suggest it here</a>
+            <a href="/contact" className="text-[--accent-brass] hover:underline">Suggest it here</a>
           </p>
         </div>
       </div>

@@ -38,7 +38,7 @@ export default function AdminMembersPage() {
                   <span
                     className={`rounded-full px-2 py-0.5 text-[10px] ${
                       member.role === "admin"
-                        ? "bg-[--accent-gold]/10 text-[--accent-gold]"
+                        ? "bg-[--accent-brass]/10 text-[--accent-brass]"
                         : "bg-[--bg-alt] text-[--text-secondary]"
                     }`}
                   >
@@ -48,7 +48,7 @@ export default function AdminMembersPage() {
                 <td className="px-4 py-3 text-[--text-secondary]">{member.joined}</td>
                 <td className="px-4 py-3 text-right">
                   <button
-                    className="rounded border border-[--border-hairline] px-2.5 py-1 text-[11px] text-[--text-secondary] hover:border-[--accent-gold] hover:text-[--accent-gold] transition-colors"
+                    className="rounded border border-[--border-hairline] px-2.5 py-1 text-[11px] text-[--text-secondary] hover:border-[--accent-brass] hover:text-[--accent-brass] transition-colors"
                     title={member.role === "admin" ? "Remove admin" : "Make admin"}
                   >
                     {member.role === "admin" ? (

@@ -15,7 +15,7 @@ export default function AdminPage() {
   return (
     <div>
       <div className="flex items-center gap-3 mb-10">
-        <LogoMark className="h-8 w-8 text-[--accent-gold]" />
+        <LogoMark className="h-8 w-8 text-[--accent-brass]" />
         <div>
           <h1 className="font-heading text-xl tracking-wide text-[--text-primary]">Admin Dashboard</h1>
           <p className="text-xs text-[--text-secondary]">Manage Readers of Aurangabad</p>
@@ -32,7 +32,7 @@ export default function AdminPage() {
               className="group rounded-lg border border-[--border-hairline] bg-[--surface-card] p-6 amber-shadow hover:-translate-y-1 transition-all duration-300"
             >
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[--accent-gold] text-[--accent-gold] group-hover:bg-[--accent-gold] group-hover:text-[--bg-base] transition-colors">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[--accent-brass] text-[--accent-brass] group-hover:bg-[--accent-brass] group-hover:text-[--bg-base] transition-colors">
                   <Icon className="h-5 w-5" />
                 </div>
                 <div>
@@ -48,7 +48,7 @@ export default function AdminPage() {
       </div>
 
       <div className="mt-12 rounded-lg border border-[--border-hairline] bg-[--surface-card] p-6 amber-shadow">
-        <h2 className="font-heading text-lg tracking-wide text-[--accent-gold]">Recent Activity</h2>
+        <h2 className="font-heading text-lg tracking-wide text-[--accent-brass]">Recent Activity</h2>
         <div className="mt-4 space-y-3">
           {[
             { action: "New book suggested", detail: "The Art of Happiness by Priya S.", time: "2 hours ago" },

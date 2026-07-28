@@ -234,7 +234,7 @@ export function MinaretDivider({ className }: { className?: string }) {
         viewBox="0 0 80 30"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="text-[--accent-gold]"
+        className="text-[--accent-brass]"
         aria-hidden="true"
       >
         <path

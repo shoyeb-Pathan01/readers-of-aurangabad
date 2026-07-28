@@ -27,12 +27,12 @@ export default function AdminGalleryPage() {
         {albums.map((album) => (
           <div key={album.id} className="rounded-lg border border-[--border-hairline] bg-[--surface-card] p-4 amber-shadow">
             <div className="flex h-40 items-center justify-center rounded border border-[--border-hairline] bg-[--bg-base] mb-3">
-              <ImageIcon className="h-8 w-8 text-[--accent-gold]" />
+              <ImageIcon className="h-8 w-8 text-[--accent-brass]" />
             </div>
             <h3 className="text-sm text-[--text-primary]">{album.name}</h3>
             <p className="text-xs text-[--text-secondary]">{album.count} photos</p>
             <div className="mt-3 flex gap-2">
-              <button className="rounded border border-[--border-hairline] px-2.5 py-1 text-[11px] text-[--text-secondary] hover:border-[--accent-gold] hover:text-[--accent-gold] transition-colors">
+              <button className="rounded border border-[--border-hairline] px-2.5 py-1 text-[11px] text-[--text-secondary] hover:border-[--accent-brass] hover:text-[--accent-brass] transition-colors">
                 Upload
               </button>
               <button

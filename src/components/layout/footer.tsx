@@ -19,17 +19,17 @@ export function Footer() {
             <SocialIcons className="mt-4 justify-center" />
           </div>
 
-          <DomeDivider className="mx-auto mb-8 text-[--accent-gold]" />
+          <DomeDivider className="mx-auto mb-8 text-[--accent-brass]" />
 
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 text-sm">
             <div>
-              <h4 className="mb-3 text-xs tracking-widest uppercase text-[--accent-gold] font-heading">Navigate</h4>
+              <h4 className="mb-3 text-xs tracking-widest uppercase text-[--accent-brass] font-heading">Navigate</h4>
               <ul className="space-y-2">
                 {NAV_LINKS.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-[--text-secondary] hover:text-[--accent-gold] transition-colors duration-400"
+                      className="text-[--text-secondary] hover:text-[--accent-brass] transition-colors duration-400"
                     >
                       {link.label}
                     </Link>
@@ -39,25 +39,25 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="mb-3 text-xs tracking-widest uppercase text-[--accent-gold] font-heading">Connect</h4>
+              <h4 className="mb-3 text-xs tracking-widest uppercase text-[--accent-brass] font-heading">Connect</h4>
               <ul className="space-y-2">
                 <li>
-                  <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-[--text-secondary] hover:text-[--accent-gold] transition-colors duration-400">
+                  <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-[--text-secondary] hover:text-[--accent-brass] transition-colors duration-400">
                     {SOCIAL_LINKS.email}
                   </a>
                 </li>
                 <li>
-                  <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="text-[--text-secondary] hover:text-[--accent-gold] transition-colors duration-400">
+                  <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="text-[--text-secondary] hover:text-[--accent-brass] transition-colors duration-400">
                     Instagram
                   </a>
                 </li>
                 <li>
-                  <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="text-[--text-secondary] hover:text-[--accent-gold] transition-colors duration-400">
+                  <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="text-[--text-secondary] hover:text-[--accent-brass] transition-colors duration-400">
                     WhatsApp
                   </a>
                 </li>
                 <li>
-                  <a href={SOCIAL_LINKS.telegram} target="_blank" rel="noopener noreferrer" className="text-[--text-secondary] hover:text-[--accent-gold] transition-colors duration-400">
+                  <a href={SOCIAL_LINKS.telegram} target="_blank" rel="noopener noreferrer" className="text-[--text-secondary] hover:text-[--accent-brass] transition-colors duration-400">
                     Telegram
                   </a>
                 </li>
@@ -65,7 +65,7 @@ export function Footer() {
             </div>
 
             <div className="col-span-2 sm:col-span-1">
-              <h4 className="mb-3 text-xs tracking-widest uppercase text-[--accent-gold] font-heading">About</h4>
+              <h4 className="mb-3 text-xs tracking-widest uppercase text-[--accent-brass] font-heading">About</h4>
               <p className="text-[--text-secondary] leading-relaxed">
                 An open reading community in Aurangabad. No boundaries of religion, language, age, or gender — anyone who loves reading is welcome.
               </p>

@@ -29,7 +29,7 @@ export default function AdminReviewsPage() {
                   <span className="text-xs text-[--text-secondary]">on {review.book}</span>
                   <span className="flex gap-0.5">
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <span key={i} className={`text-xs ${i < review.rating ? "text-[--accent-gold]" : "text-[--border-hairline]"}`}>★</span>
+                      <span key={i} className={`text-xs ${i < review.rating ? "text-[--accent-brass]" : "text-[--border-hairline]"}`}>★</span>
                     ))}
                   </span>
                 </div>
@@ -39,7 +39,7 @@ export default function AdminReviewsPage() {
                 className={`rounded-full px-2 py-0.5 text-[10px] shrink-0 ${
                   review.status === "flagged"
                     ? "bg-[--accent-burgundy]/10 text-[--accent-burgundy]"
-                    : "bg-[--accent-forest]/10 text-[--accent-forest]"
+                    : "bg-[--accent-emerald]/10 text-[--accent-emerald]"
                 }`}
               >
                 {review.status}
@@ -47,12 +47,12 @@ export default function AdminReviewsPage() {
             </div>
             <div className="mt-3 flex gap-2">
               {review.status === "flagged" ? (
-                <button className="rounded border border-[--accent-forest] px-2.5 py-1 text-[11px] text-[--accent-forest] hover:bg-[--accent-forest] hover:text-white transition-colors">
+                <button className="rounded border border-[--accent-emerald] px-2.5 py-1 text-[11px] text-[--accent-emerald] hover:bg-[--accent-emerald] hover:text-white transition-colors">
                   <Eye className="h-3 w-3 mr-1 inline" />
                   Approve
                 </button>
               ) : (
-                <button className="rounded border border-[--border-hairline] px-2.5 py-1 text-[11px] text-[--text-secondary] hover:border-[--accent-gold] hover:text-[--accent-gold] transition-colors">
+                <button className="rounded border border-[--border-hairline] px-2.5 py-1 text-[11px] text-[--text-secondary] hover:border-[--accent-brass] hover:text-[--accent-brass] transition-colors">
                   <EyeOff className="h-3 w-3 mr-1 inline" />
                   Hide
                 </button>

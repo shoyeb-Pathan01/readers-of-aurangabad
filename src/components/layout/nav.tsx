@@ -35,8 +35,8 @@ export function Nav() {
           href="/"
           className="group flex items-center gap-3 transition-transform duration-400 hover:scale-[1.02]"
         >
-          <LogoMark className="h-10 w-10 sm:h-11 sm:w-11 transition-all duration-500 group-hover:drop-shadow-[0_0_10px_var(--accent-gold)]" />
-          <span className="hidden sm:inline font-heading text-xl tracking-wider text-[--text-primary] transition-colors duration-400 group-hover:text-[--accent-gold]">
+          <LogoMark className="h-10 w-10 sm:h-11 sm:w-11 transition-all duration-500 group-hover:drop-shadow-[0_0_10px_var(--accent-brass)]" />
+          <span className="hidden sm:inline font-heading text-xl tracking-wider text-[--text-primary] transition-colors duration-400 group-hover:text-[--accent-brass]">
             {SITE_NAME}
           </span>
         </Link>
@@ -50,11 +50,11 @@ export function Nav() {
                 href={link.href}
                 className={cn(
                   "relative px-4 py-2 text-sm font-body tracking-wide transition-colors duration-400",
-                  "hover:text-[--accent-gold]",
-                  "after:absolute after:bottom-0.5 after:left-4 after:right-4 after:h-[1px] after:bg-[--accent-gold]",
+                  "hover:text-[--accent-brass]",
+                  "after:absolute after:bottom-0.5 after:left-4 after:right-4 after:h-[1px] after:bg-[--accent-brass]",
                   "after:origin-center after:transition-transform after:duration-400 after:ease-out",
                   isActive
-                    ? "text-[--accent-gold] after:scale-x-100"
+                    ? "text-[--accent-brass] after:scale-x-100"
                     : "text-[--text-secondary] after:scale-x-0 hover:after:scale-x-100",
                 )}
               >
@@ -68,7 +68,7 @@ export function Nav() {
           <ThemeToggle />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-[--accent-gold] hover:text-[--accent-gold-bright] md:hidden transition-all duration-400 hover:scale-110"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-[--accent-brass] hover:text-[--accent-brass-bright] md:hidden transition-all duration-400 hover:scale-110"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -95,10 +95,10 @@ export function Nav() {
                     onClick={() => setMobileOpen(false)}
                     className={cn(
                       "px-4 py-3 text-sm font-body tracking-wide rounded-lg transition-all duration-400",
-                      "hover:text-[--accent-gold]",
+                      "hover:text-[--accent-brass]",
                       isActive
-                        ? "text-[--accent-gold] bg-[--accent-gold]/5"
-                        : "text-[--text-secondary] hover:bg-[--accent-gold]/5",
+                        ? "text-[--accent-brass] bg-[--accent-brass]/5"
+                        : "text-[--text-secondary] hover:bg-[--accent-brass]/5",
                     )}
                   >
                     {link.label}

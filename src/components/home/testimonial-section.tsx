@@ -25,19 +25,19 @@ const testimonials = [
 
 export function TestimonialSection() {
   return (
-    <section className="py-24 md:py-28 bg-texture bg-wood">
+    <section className="py-20 md:py-24 lg:py-32 bg-texture bg-wood">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <SectionHeader
           title="Voices from the Community"
           subtitle="What our members say about their experience"
         />
 
-        <StaggerContainer className="mt-12 md:mt-14 grid grid-cols-1 gap-5 md:grid-cols-3">
+        <StaggerContainer className="mt-12 md:mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
           {testimonials.map((t) => (
             <StaggerItem key={t.name}>
               <ArchCard className="relative h-full">
                 <ArchCardContent className="pt-8 pb-6">
-                  <Quote className="mb-4 h-7 w-7 text-[--accent-gold] opacity-25" />
+                  <Quote className="mb-4 h-7 w-7 text-[--accent-brass] opacity-25" />
                   <p className="font-quote text-sm leading-relaxed italic text-[--text-secondary]">
                     &ldquo;{t.quote}&rdquo;
                   </p>

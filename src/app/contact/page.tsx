@@ -24,35 +24,35 @@ export default function ContactPage() {
           <FadeIn>
             <div className="space-y-6">
               <div className="flex items-start gap-3">
-                <Mail className="mt-0.5 h-4 w-4 text-[--accent-gold] shrink-0" />
+                <Mail className="mt-0.5 h-4 w-4 text-[--accent-brass] shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-[--text-primary]">Email</p>
-                  <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-sm text-[--text-secondary] hover:text-[--accent-gold] transition-colors duration-400">
+                  <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-sm text-[--text-secondary] hover:text-[--accent-brass] transition-colors duration-400">
                     {SOCIAL_LINKS.email}
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 text-[--accent-gold] shrink-0" />
+                <MapPin className="mt-0.5 h-4 w-4 text-[--accent-brass] shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-[--text-primary]">Location</p>
                   <p className="text-sm text-[--text-secondary]">Aurangabad, Maharashtra, India</p>
                 </div>
               </div>
 
-              <div className="rounded-sm border border-[--border-hairline] bg-[--surface-card] p-5 card-shadow-warm">
-                <h4 className="font-heading text-base tracking-wide text-[--accent-gold]">Connect With Us</h4>
+              <div className="rounded-sm border border-[--accent-navy]/30 bg-[--surface-card] p-5 card-shadow-warm">
+                <h4 className="font-heading text-base tracking-wide text-[--accent-brass]">Connect With Us</h4>
                 <p className="mt-1 text-xs text-[--text-secondary]">
                   Follow us on social media for the latest updates.
                 </p>
                 <SocialIcons className="mt-4" />
               </div>
 
-              <div className="border-l-2 border-[--accent-gold]/30 pl-4 py-1">
+              <div className="border-l-2 border-[--accent-navy]/40 pl-4 py-1">
                 <p className="text-xs italic text-[--text-secondary] leading-relaxed">
                   &ldquo;A book is a gift you can open again and again.&rdquo;
                 </p>
-                <p className="text-xs text-[--accent-gold] mt-0.5">&mdash; Readers of Aurangabad</p>
+                <p className="text-xs text-[--accent-brass] mt-0.5">&mdash; Readers of Aurangabad</p>
               </div>
             </div>
           </FadeIn>
@@ -62,14 +62,14 @@ export default function ContactPage() {
               <ArchCardContent className="pt-8 pb-6 px-6">
                 <div className="flex items-center gap-2 mb-1">
                   <Heart className="h-3.5 w-3.5 text-[--accent-burgundy]" />
-                  <h3 className="font-heading text-lg tracking-wide text-[--accent-gold]">Send a Letter</h3>
+                  <h3 className="font-heading text-lg tracking-wide text-[--accent-brass]">Send a Letter</h3>
                 </div>
                 <p className="text-xs text-[--text-secondary] mb-5">
                   Suggest a book, share feedback, or just say hello. We read every message.
                 </p>
 
                 {submitted ? (
-                  <div className="rounded-sm border border-[--accent-forest] bg-[--accent-forest]/8 px-4 py-3 text-sm text-[--accent-forest] card-shadow-warm">
+                  <div className="rounded-sm border border-[--accent-emerald] bg-[--accent-emerald]/8 px-4 py-3 text-sm text-[--accent-emerald] card-shadow-warm">
                     Thank you for your message. We will write back soon.
                   </div>
                 ) : (
@@ -87,7 +87,7 @@ export default function ContactPage() {
                           id="name"
                           type="text"
                           required
-                          className="w-full rounded-sm border border-[--border-hairline] bg-[--bg-base] px-3 py-2 text-sm text-[--text-primary] placeholder-[--text-secondary] focus:border-[--accent-gold] focus:outline-none focus:ring-1 focus:ring-[--accent-gold] transition-all duration-400"
+                          className="w-full rounded-sm border border-[--border-hairline] bg-[--bg-base] px-3 py-2 text-sm text-[--text-primary] placeholder-[--text-secondary] focus:border-[--accent-brass] focus:outline-none focus:ring-1 focus:ring-[--accent-brass] transition-all duration-400"
                           placeholder="Your name"
                         />
                       </div>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                           id="email"
                           type="email"
                           required
-                          className="w-full rounded-sm border border-[--border-hairline] bg-[--bg-base] px-3 py-2 text-sm text-[--text-primary] placeholder-[--text-secondary] focus:border-[--accent-gold] focus:outline-none focus:ring-1 focus:ring-[--accent-gold] transition-all duration-400"
+                          className="w-full rounded-sm border border-[--border-hairline] bg-[--bg-base] px-3 py-2 text-sm text-[--text-primary] placeholder-[--text-secondary] focus:border-[--accent-brass] focus:outline-none focus:ring-1 focus:ring-[--accent-brass] transition-all duration-400"
                           placeholder="your@email.com"
                         />
                       </div>
@@ -108,7 +108,7 @@ export default function ContactPage() {
                         id="subject"
                         type="text"
                         required
-                        className="w-full rounded-sm border border-[--border-hairline] bg-[--bg-base] px-3 py-2 text-sm text-[--text-primary] placeholder-[--text-secondary] focus:border-[--accent-gold] focus:outline-none focus:ring-1 focus:ring-[--accent-gold] transition-all duration-400"
+                        className="w-full rounded-sm border border-[--border-hairline] bg-[--bg-base] px-3 py-2 text-sm text-[--text-primary] placeholder-[--text-secondary] focus:border-[--accent-brass] focus:outline-none focus:ring-1 focus:ring-[--accent-brass] transition-all duration-400"
                         placeholder="What is this about?"
                       />
                     </div>
@@ -118,7 +118,7 @@ export default function ContactPage() {
                         id="message"
                         required
                         rows={4}
-                        className="w-full rounded-sm border border-[--border-hairline] bg-[--bg-base] px-3 py-2 text-sm text-[--text-primary] placeholder-[--text-secondary] focus:border-[--accent-gold] focus:outline-none focus:ring-1 focus:ring-[--accent-gold] transition-all duration-400 resize-none"
+                        className="w-full rounded-sm border border-[--border-hairline] bg-[--bg-base] px-3 py-2 text-sm text-[--text-primary] placeholder-[--text-secondary] focus:border-[--accent-brass] focus:outline-none focus:ring-1 focus:ring-[--accent-brass] transition-all duration-400 resize-none"
                         placeholder="Your message..."
                       />
                     </div>

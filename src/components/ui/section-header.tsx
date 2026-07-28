@@ -18,7 +18,7 @@ export function SectionHeader({ title, subtitle, className }: SectionHeaderProps
           {subtitle}
         </p>
       )}
-      <DomeDivider className="mt-4 text-[--accent-gold]" />
+      <DomeDivider className="mt-4 text-[--accent-brass]" />
     </div>
   )
 }

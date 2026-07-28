@@ -32,7 +32,7 @@ export default function AdminMeetupsPage() {
             className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between rounded-lg border border-[--border-hairline] bg-[--surface-card] px-4 py-3 amber-shadow"
           >
             <div className="flex items-start gap-3">
-              <Calendar className="mt-0.5 h-4 w-4 text-[--accent-gold]" />
+              <Calendar className="mt-0.5 h-4 w-4 text-[--accent-brass]" />
               <div>
                 <p className="text-sm text-[--text-primary]">{meetup.venue}</p>
                 <p className="text-xs text-[--text-secondary]">{meetup.date} · {meetup.agenda}</p>
@@ -42,14 +42,14 @@ export default function AdminMeetupsPage() {
               <span
                 className={`rounded-full px-2 py-0.5 text-[10px] ${
                   meetup.status === "upcoming"
-                    ? "bg-[--accent-forest]/10 text-[--accent-forest]"
+                    ? "bg-[--accent-emerald]/10 text-[--accent-emerald]"
                     : "bg-[--bg-alt] text-[--text-secondary]"
                 }`}
               >
                 {meetup.status}
               </span>
               <div className="flex gap-2">
-                <button className="rounded border border-[--border-hairline] px-2.5 py-1 text-[11px] text-[--text-secondary] hover:border-[--accent-gold] hover:text-[--accent-gold] transition-colors">
+                <button className="rounded border border-[--border-hairline] px-2.5 py-1 text-[11px] text-[--text-secondary] hover:border-[--accent-brass] hover:text-[--accent-brass] transition-colors">
                   Edit
                 </button>
                 <button

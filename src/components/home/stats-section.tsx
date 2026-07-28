@@ -14,7 +14,7 @@ const stats = [
 
 export function StatsSection() {
   return (
-    <section className="py-24 md:py-28 bg-texture warm-light overflow-hidden">
+    <section className="py-20 md:py-24 lg:py-32 bg-texture warm-light overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <SectionHeader
           title="Our Reach"
@@ -28,8 +28,8 @@ export function StatsSection() {
               <ScaleReveal key={s.label}>
                 <ArchCard className="h-full">
                   <ArchCardContent className="flex flex-col items-center justify-center py-8 px-5">
-                    <Icon className="h-7 w-7 text-[--accent-gold] mb-4" />
-                    <p className="font-heading text-3xl sm:text-4xl md:text-5xl text-[--accent-gold] leading-none">
+                    <Icon className="h-7 w-7 text-[--accent-brass] mb-4" />
+                    <p className="font-heading text-3xl sm:text-4xl md:text-5xl text-[--accent-brass] leading-none">
                       <CountUp end={s.value} duration={2} />
                       {s.suffix}
                     </p>

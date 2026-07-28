@@ -55,7 +55,7 @@ export default function AdminBooksPage() {
               placeholder="Search books..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-48 rounded-md border border-[--border-hairline] bg-[--bg-base] py-2 pl-10 pr-3 text-sm text-[--text-primary] placeholder-[--text-secondary] focus:border-[--accent-gold] focus:outline-none focus:ring-1 focus:ring-[--accent-gold]"
+              className="w-48 rounded-md border border-[--border-hairline] bg-[--bg-base] py-2 pl-10 pr-3 text-sm text-[--text-primary] placeholder-[--text-secondary] focus:border-[--accent-brass] focus:outline-none focus:ring-1 focus:ring-[--accent-brass]"
             />
           </div>
           <GoldButton variant="primary" size="sm">
@@ -93,10 +93,10 @@ export default function AdminBooksPage() {
                     <span
                       className={`rounded-full px-2 py-0.5 text-[10px] ${
                         book.status === "approved"
-                          ? "bg-[--accent-forest]/10 text-[--accent-forest]"
+                          ? "bg-[--accent-emerald]/10 text-[--accent-emerald]"
                           : book.status === "rejected"
                             ? "bg-[--accent-burgundy]/10 text-[--accent-burgundy]"
-                            : "bg-[--accent-gold]/10 text-[--accent-gold]"
+                            : "bg-[--accent-brass]/10 text-[--accent-brass]"
                       }`}
                     >
                       {book.status}
@@ -107,7 +107,7 @@ export default function AdminBooksPage() {
                       <div className="flex justify-end gap-2">
                         <button
                           onClick={() => approve(book.id)}
-                          className="rounded border border-[--accent-forest] px-2.5 py-1 text-[11px] text-[--accent-forest] hover:bg-[--accent-forest] hover:text-white transition-colors"
+                          className="rounded border border-[--accent-emerald] px-2.5 py-1 text-[11px] text-[--accent-emerald] hover:bg-[--accent-emerald] hover:text-white transition-colors"
                         >
                           <Check className="h-3 w-3" />
                         </button>
@@ -139,7 +139,7 @@ export default function AdminBooksPage() {
 
         {filtered.length === 0 && (
           <div className="flex flex-col items-center py-12 text-center">
-            <BookOpen className="mb-3 h-8 w-8 text-[--accent-gold]" />
+            <BookOpen className="mb-3 h-8 w-8 text-[--accent-brass]" />
             <p className="text-sm text-[--text-secondary]">No books found</p>
           </div>
         )}

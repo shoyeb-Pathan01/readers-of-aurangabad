@@ -9,8 +9,8 @@ export function LoginButton({ className }: { className?: string }) {
     <button
       onClick={() => signIn("google", { redirectTo: "/" })}
       className={cn(
-        "inline-flex h-9 items-center gap-2 rounded-md border border-[--accent-gold] px-3 text-xs text-[--accent-gold]",
-        "hover:bg-[--accent-gold] hover:text-[--bg-base] transition-colors",
+        "inline-flex h-9 items-center gap-2 rounded-md border border-[--accent-brass] px-3 text-xs text-[--accent-brass]",
+        "hover:bg-[--accent-brass] hover:text-[--bg-base] transition-colors",
         className,
       )}
       aria-label="Sign in"

@@ -11,7 +11,7 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-[70vh] flex-col items-center justify-center px-4">
       <div className="w-full max-w-sm rounded-lg border border-[--border-hairline] bg-[--surface-card] p-8 amber-shadow text-center">
-        <LogoMark className="mx-auto h-12 w-12 text-[--accent-gold]" />
+        <LogoMark className="mx-auto h-12 w-12 text-[--accent-brass]" />
         <h1 className="mt-4 font-heading text-xl tracking-wide text-[--text-primary]">
           Welcome to Readers of Aurangabad
         </h1>

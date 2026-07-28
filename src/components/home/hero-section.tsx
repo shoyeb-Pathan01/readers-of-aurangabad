@@ -37,7 +37,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: baseDur, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <LogoMark className="mx-auto h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 mb-8 drop-shadow-[0_0_24px_var(--accent-gold)]" />
+          <LogoMark className="mx-auto h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 mb-8 drop-shadow-[0_0_24px_var(--accent-brass)]" />
         </motion.div>
 
         <motion.div
@@ -45,9 +45,7 @@ export function HeroSection() {
           animate={{ opacity: 0.7 }}
           transition={{ duration: baseDur * 0.7, delay: stagger * 1, ease: "easeOut" }}
         >
-          <p className="font-quote text-base md:text-lg italic text-[--text-secondary] max-w-xl mx-auto leading-relaxed">
-            &ldquo;A reader lives a thousand lives before he dies.&rdquo;
-          </p>
+
         </motion.div>
 
         <motion.div
@@ -56,15 +54,15 @@ export function HeroSection() {
           transition={{ duration: baseDur, delay: stagger * 2, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <div className="relative inline-block px-10 py-8 md:py-10 mt-6">
-            <DoubleBorderFrame className="absolute inset-0 text-[--accent-gold]" />
-            <ScallopedCorner className="top-0 left-0 text-[--accent-gold]" />
-            <ScallopedCorner className="top-0 right-0 text-[--accent-gold] scale-x-[-1]" />
-            <ScallopedCorner className="bottom-0 left-0 text-[--accent-gold] scale-y-[-1]" />
-            <ScallopedCorner className="bottom-0 right-0 text-[--accent-gold] scale-[-1]" />
+            <DoubleBorderFrame className="absolute inset-0 text-[--accent-brass]" />
+            <ScallopedCorner className="top-0 left-0 text-[--accent-brass]" />
+            <ScallopedCorner className="top-0 right-0 text-[--accent-brass] scale-x-[-1]" />
+            <ScallopedCorner className="bottom-0 left-0 text-[--accent-brass] scale-y-[-1]" />
+            <ScallopedCorner className="bottom-0 right-0 text-[--accent-brass] scale-[-1]" />
             <h1 className="font-heading text-5xl tracking-wider text-[--text-primary] sm:text-6xl md:text-7xl lg:text-8xl leading-tight">
               Readers of
               <br />
-              <span className="text-[--accent-gold]">Aurangabad</span>
+              <span className="text-[--accent-brass]">Aurangabad</span>
             </h1>
           </div>
         </motion.div>
@@ -109,7 +107,7 @@ export function HeroSection() {
 
       <motion.button
         onClick={scrollNext}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-[--accent-gold]"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-[--accent-brass]"
         initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 0.5, y: 0 }}
         transition={{ duration: 0.6, delay: stagger * 6, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}

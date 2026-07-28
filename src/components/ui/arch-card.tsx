@@ -50,7 +50,7 @@ export function ArchCard({ children, className, href, tilt = true, onClick }: Ar
     "card-shadow-warm",
     "transition-all duration-500 ease-out",
     hovered
-      ? "card-shadow-lift -translate-y-1.5 border-[--accent-gold]/40 gold-border-glow"
+      ? "card-shadow-lift -translate-y-1.5 border-[--accent-brass]/40 brass-border-glow"
       : "",
     href && "cursor-pointer",
     "bg-paper",
@@ -75,7 +75,7 @@ export function ArchCard({ children, className, href, tilt = true, onClick }: Ar
         aria-hidden="true"
       >
         <path d="M0 40V8 Q50 -2 100 4 Q150 10 200 0 Q250 10 300 4 Q350 -2 400 8V40H0Z" className="fill-[--bg-base]" opacity="0.9" />
-        <path d="M0 40V8 Q50 -2 100 4 Q150 10 200 0 Q250 10 300 4 Q350 -2 400 8V40" stroke="var(--accent-gold)" strokeWidth="0.5" fill="none" opacity="0.3" />
+        <path d="M0 40V8 Q50 -2 100 4 Q150 10 200 0 Q250 10 300 4 Q350 -2 400 8V40" stroke="var(--accent-brass)" strokeWidth="0.5" fill="none" opacity="0.3" />
       </svg>
       <div className="relative z-20 pt-8 md:pt-10 h-full">{children}</div>
     </div>

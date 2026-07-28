@@ -132,14 +132,9 @@ export function Book3D({
               boxShadow: `inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.15)`,
             }}
           >
-            <div className="text-center px-3">
-              <BookOpen className="mx-auto h-6 w-6 text-white/30 mb-1" />
-              <p className="text-[10px] text-white/60 font-heading leading-tight line-clamp-2">
-                {title}
-              </p>
-              <p className="text-[7px] text-white/40 mt-1">{author}</p>
-              {/* Gold line accent */}
-              <div className="mx-auto mt-1.5 h-[1px] w-8 bg-[--accent-gold]/40" />
+          <div className="text-center px-3">
+              <BookOpen className="mx-auto h-7 w-7 text-white/25" />
+              <div className="mx-auto mt-2 h-[1px] w-6 bg-[--accent-brass]/30" />
             </div>
           </div>
 
@@ -219,13 +214,15 @@ export function Book3D({
 
       {/* Info below */}
       <div className={cn("text-center transition-all duration-500", hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1")}>
+        <p className="text-[11px] text-[--text-primary] font-heading leading-tight">{title}</p>
+        <p className="text-[10px] text-[--text-secondary]">{author}</p>
         {category && (
-          <span className="inline-block mt-2 px-2 py-0.5 rounded-full border border-[--accent-gold]/30 text-[10px] text-[--accent-gold]">
+          <span className="inline-block mt-1.5 px-2 py-0.5 rounded-full border border-[--accent-brass]/30 text-[10px] text-[--accent-brass]">
             {category}
           </span>
         )}
         {rating && (
-          <div className="mt-1 text-[11px] text-[--accent-gold]">
+          <div className="mt-1 text-[11px] text-[--accent-brass]">
             {"★".repeat(Math.floor(rating))}{"☆".repeat(5 - Math.floor(rating))}
           </div>
         )}
