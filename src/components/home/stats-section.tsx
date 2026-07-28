@@ -14,26 +14,26 @@ const stats = [
 
 export function StatsSection() {
   return (
-    <section className="py-36 md:py-44 bg-texture warm-light overflow-hidden">
+    <section className="py-24 md:py-28 bg-texture warm-light overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <SectionHeader
           title="Our Reach"
           subtitle="Growing one Sunday at a time"
         />
 
-        <div className="mt-16 md:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+        <div className="mt-12 md:mt-14 grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
           {stats.map((s) => {
             const Icon = s.icon
             return (
               <ScaleReveal key={s.label}>
                 <ArchCard className="h-full">
-                  <ArchCardContent className="flex flex-col items-center justify-center py-10 px-6">
-                    <Icon className="h-8 w-8 text-[--accent-gold] mb-5" />
-                    <p className="font-heading text-4xl sm:text-5xl md:text-6xl text-[--accent-gold] leading-none">
-                      <CountUp end={s.value} duration={2.5} />
+                  <ArchCardContent className="flex flex-col items-center justify-center py-8 px-5">
+                    <Icon className="h-7 w-7 text-[--accent-gold] mb-4" />
+                    <p className="font-heading text-3xl sm:text-4xl md:text-5xl text-[--accent-gold] leading-none">
+                      <CountUp end={s.value} duration={2} />
                       {s.suffix}
                     </p>
-                    <p className="mt-3 text-sm sm:text-base text-[--text-secondary]">{s.label}</p>
+                    <p className="mt-2 text-sm text-[--text-secondary]">{s.label}</p>
                   </ArchCardContent>
                 </ArchCard>
               </ScaleReveal>

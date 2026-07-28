@@ -9,8 +9,8 @@ import { useRef } from "react"
 
 const Hero3DScene = dynamic(() => import("@/components/home/hero-3d").then((m) => m.Hero3DScene), { ssr: false })
 
-const stagger = 0.25
-const baseDur = 1.0
+const stagger = 0.2
+const baseDur = 0.9
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -31,19 +31,19 @@ export function HeroSection() {
 
       <div className="absolute inset-0 jali-bg" />
 
-      <IwanGateway className="relative z-10 mx-auto max-w-5xl px-6 text-center py-20">
+      <IwanGateway className="relative z-10 mx-auto max-w-5xl px-6 text-center py-16">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: baseDur, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <LogoMark className="mx-auto h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 mb-8 md:mb-10 drop-shadow-[0_0_20px_var(--accent-gold)]" />
+          <LogoMark className="mx-auto h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 mb-8 drop-shadow-[0_0_24px_var(--accent-gold)]" />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.75 }}
-          transition={{ duration: baseDur * 0.8, delay: stagger * 1, ease: "easeOut" }}
+          animate={{ opacity: 0.7 }}
+          transition={{ duration: baseDur * 0.7, delay: stagger * 1, ease: "easeOut" }}
         >
           <p className="font-quote text-base md:text-lg italic text-[--text-secondary] max-w-xl mx-auto leading-relaxed">
             &ldquo;A reader lives a thousand lives before he dies.&rdquo;
@@ -51,11 +51,11 @@ export function HeroSection() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: baseDur, delay: stagger * 2, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <div className="relative inline-block px-10 py-10 md:py-12 mt-8">
+          <div className="relative inline-block px-10 py-8 md:py-10 mt-6">
             <DoubleBorderFrame className="absolute inset-0 text-[--accent-gold]" />
             <ScallopedCorner className="top-0 left-0 text-[--accent-gold]" />
             <ScallopedCorner className="top-0 right-0 text-[--accent-gold] scale-x-[-1]" />
@@ -70,21 +70,21 @@ export function HeroSection() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: baseDur * 0.8, delay: stagger * 3, ease: "easeOut" }}
+          transition={{ duration: baseDur * 0.7, delay: stagger * 3, ease: "easeOut" }}
         >
-          <p className="mx-auto mt-8 max-w-2xl font-quote text-lg leading-relaxed italic text-[--text-secondary] sm:text-xl">
+          <p className="mx-auto mt-6 max-w-2xl font-quote text-lg leading-relaxed italic text-[--text-secondary] sm:text-xl">
             &ldquo;Igniting the love for reading in Aurangabad — one Sunday, one book, one conversation at a time.&rdquo;
           </p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: baseDur * 0.7, delay: stagger * 4, ease: "easeOut" }}
+          transition={{ duration: baseDur * 0.6, delay: stagger * 4, ease: "easeOut" }}
         >
-          <div className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <GoldLink href="/meetups" variant="primary" size="lg">
               Join a Meetup
             </GoldLink>
@@ -97,28 +97,28 @@ export function HeroSection() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: stagger * 5, ease: "easeOut" }}
+          transition={{ duration: 0.6, delay: stagger * 5, ease: "easeOut" }}
         >
-          <div className="mt-16 flex items-center justify-center gap-3 text-sm text-[--text-secondary]">
-            <span className="inline-block h-px w-12 bg-[--border-hairline]" />
+          <div className="mt-12 flex items-center justify-center gap-3 text-sm text-[--text-secondary]">
+            <span className="inline-block h-px w-10 bg-[--border-hairline]" />
             Open to all &middot; Free to join
-            <span className="inline-block h-px w-12 bg-[--border-hairline]" />
+            <span className="inline-block h-px w-10 bg-[--border-hairline]" />
           </div>
         </motion.div>
       </IwanGateway>
 
       <motion.button
         onClick={scrollNext}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 text-[--accent-gold]"
-        initial={{ opacity: 0, y: -10 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-[--accent-gold]"
+        initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 0.5, y: 0 }}
-        transition={{ duration: 0.8, delay: stagger * 6, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+        transition={{ duration: 0.6, delay: stagger * 6, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
         aria-label="Scroll to next section"
       >
         <ChevronDown className="h-7 w-7" />
       </motion.button>
 
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[--bg-base] to-transparent z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-[--bg-base] to-transparent z-10" />
     </section>
   )
 }

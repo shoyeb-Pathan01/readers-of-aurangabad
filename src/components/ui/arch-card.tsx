@@ -9,9 +9,10 @@ interface ArchCardProps {
   className?: string
   href?: string
   tilt?: boolean
+  onClick?: () => void
 }
 
-export function ArchCard({ children, className, href, tilt = true }: ArchCardProps) {
+export function ArchCard({ children, className, href, tilt = true, onClick }: ArchCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [tiltStyle, setTiltStyle] = useState({})
   const [hovered, setHovered] = useState(false)
@@ -81,6 +82,7 @@ export function ArchCard({ children, className, href, tilt = true }: ArchCardPro
   )
 
   if (href) return <Link href={href} className={shared}>{content}</Link>
+  if (onClick) return <div className={shared} onClick={onClick} role="button" tabIndex={0} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onClick() }}>{content}</div>
   return <div className={shared}>{content}</div>
 }
 
