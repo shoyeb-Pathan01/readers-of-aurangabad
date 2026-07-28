@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useMemo, useEffect, useState } from "react"
-import { Canvas, useFrame, useThree } from "@react-three/fiber"
+import { Canvas, useFrame } from "@react-three/fiber"
 import { Float, PerspectiveCamera } from "@react-three/drei"
 import * as THREE from "three"
 
@@ -73,6 +73,15 @@ function BookStack() {
     [],
   )
 
+  const meshProps = useMemo(
+    () =>
+      books.map((book) => ({
+        geom: new THREE.BoxGeometry(book.w, book.h, book.d),
+        mat: new THREE.MeshStandardMaterial({ color: book.color, roughness: 0.7, metalness: 0.15 }),
+      })),
+    [books],
+  )
+
   useFrame((state) => {
     if (groupRef.current) {
       groupRef.current.rotation.y = Math.sin(state.clock.getElapsedTime() * 0.08) * 0.04
@@ -82,11 +91,9 @@ function BookStack() {
 
   return (
     <group ref={groupRef} position={[1.8, -0.3, -1.5]}>
-      {books.map((book, i) => {
-        const [geom] = useState(() => new THREE.BoxGeometry(book.w, book.h, book.d))
-        const [mat] = useState(() => new THREE.MeshStandardMaterial({ color: book.color, roughness: 0.7, metalness: 0.15 }))
-        return <mesh key={i} position={[0, book.y, 0]} geometry={geom} material={mat} />
-      })}
+      {books.map((book, i) => (
+        <mesh key={i} position={[0, book.y, 0]} geometry={meshProps[i].geom} material={meshProps[i].mat} />
+      ))}
     </group>
   )
 }

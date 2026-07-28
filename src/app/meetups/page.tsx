@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { MapPin, Clock, Calendar, Users, BookOpen } from "lucide-react"
+import { Clock, Calendar, Users, BookOpen } from "lucide-react"
 import { SectionHeader } from "@/components/ui/section-header"
 import { ArchCard, ArchCardContent } from "@/components/ui/arch-card"
 import { GoldButton } from "@/components/ui/gold-button"
@@ -91,7 +91,7 @@ export default function MeetupsPage() {
         <div className="mt-14">
           <h3 className="font-heading text-xl tracking-wide text-[--text-secondary] mb-6">Past Meetups</h3>
           <div className="space-y-3">
-            {pastMeetups.map((meetup, i) => (
+            {pastMeetups.map((meetup) => (
               <div
                 key={meetup.date}
                 className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 rounded-sm border border-[--border-hairline] bg-[--surface-card] px-4 py-3 card-shadow-soft group hover:card-shadow-warm transition-all duration-400"

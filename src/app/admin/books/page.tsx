@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { BookOpen, Plus, Check, X, Search } from "lucide-react"
-import { SectionHeader } from "@/components/ui/section-header"
 import { GoldButton } from "@/components/ui/gold-button"
 
 const initialBooks = [

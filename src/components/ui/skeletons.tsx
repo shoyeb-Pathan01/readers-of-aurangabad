@@ -24,6 +24,8 @@ export function ArchCardSkeleton() {
   )
 }
 
+const SKELETON_LINE_WIDTHS = [92, 78, 85, 70, 96, 82]
+
 export function TextSkeleton({ lines = 3 }: { lines?: number }) {
   return (
     <div className="animate-pulse space-y-2">
@@ -31,7 +33,7 @@ export function TextSkeleton({ lines = 3 }: { lines?: number }) {
         <div
           key={i}
           className="h-3 rounded bg-[--bg-alt]"
-          style={{ width: `${70 + Math.random() * 30}%` }}
+          style={{ width: `${SKELETON_LINE_WIDTHS[i % SKELETON_LINE_WIDTHS.length]}%` }}
         />
       ))}
     </div>

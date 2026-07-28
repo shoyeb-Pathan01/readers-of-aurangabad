@@ -221,6 +221,11 @@ export function Book3D({
             {category}
           </span>
         )}
+        {difficulty && (
+          <span className="inline-block mt-1.5 ml-1 px-2 py-0.5 rounded-full border border-[--border-hairline] text-[10px] text-[--text-secondary]">
+            {difficulty}
+          </span>
+        )}
         {rating && (
           <div className="mt-1 text-[11px] text-[--accent-brass]">
             {"★".repeat(Math.floor(rating))}{"☆".repeat(5 - Math.floor(rating))}
@@ -228,6 +233,9 @@ export function Book3D({
         )}
         {summary && (
           <p className="mt-1 text-[10px] text-[--text-secondary] leading-tight max-w-[130px] mx-auto">{summary}</p>
+        )}
+        {suggestedBy && (
+          <p className="mt-1 text-[9px] text-[--text-secondary]/70 italic">Suggested by {suggestedBy}</p>
         )}
       </div>
     </div>

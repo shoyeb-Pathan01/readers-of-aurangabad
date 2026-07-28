@@ -1,6 +1,6 @@
 "use client"
 
-import { Users, Shield, ShieldOff } from "lucide-react"
+import { Shield, ShieldOff } from "lucide-react"
 
 const members = [
   { id: "1", name: "Priya Sharma", email: "priya@example.com", role: "member" as const, joined: "Jan 2024" },

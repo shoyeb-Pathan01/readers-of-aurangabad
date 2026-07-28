@@ -1,6 +1,5 @@
 "use client"
 
-import { Quote } from "lucide-react"
 import { SectionHeader } from "@/components/ui/section-header"
 import { ArchCard, ArchCardContent } from "@/components/ui/arch-card"
 import { StaggerContainer, StaggerItem } from "@/components/ui/motion-wrapper"
