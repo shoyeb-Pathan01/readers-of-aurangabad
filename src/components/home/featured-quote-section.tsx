@@ -33,10 +33,10 @@ export function FeaturedQuoteSection() {
           <ArchCard className="relative mt-12 md:mt-14 text-center" torn>
             <ArchCardContent className="px-8 py-10 md:px-12">
               <Quote className="mx-auto mb-6 h-9 w-9 text-[--accent-brass] opacity-20" />
-              <blockquote className="font-script text-2xl leading-relaxed text-[--text-primary] sm:text-3xl md:text-4xl" style={{ transform: "rotate(-1.5deg)" }}>
+              <blockquote className="font-script text-2xl leading-relaxed text-[--text-primary] sm:text-3xl md:text-4xl drop-cap" style={{ transform: "rotate(-1.5deg)" }}>
                 &ldquo;{quote.text}&rdquo;
               </blockquote>
-              <p className="mt-6 font-script text-lg text-[--accent-brass] tracking-wide" style={{ transform: "rotate(1deg)" }}>&mdash; {quote.author}</p>
+              <p className="mt-6 font-script text-lg text-[--accent-brass-text] tracking-wide" style={{ transform: "rotate(1deg)" }}>&mdash; {quote.author}</p>
               <div className="mt-8 flex items-center justify-center gap-2.5">
                 {quotes.map((_, i) => (
                   <button

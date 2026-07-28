@@ -382,3 +382,36 @@ export function TwineBow({ className }: { className?: string }) {
     </svg>
   )
 }
+
+export function ExLibrisStamp({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      width="64"
+      height="64"
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <circle cx="32" cy="32" r="30" stroke="currentColor" strokeWidth="1" opacity="0.6" />
+      <circle cx="32" cy="32" r="27" stroke="currentColor" strokeWidth="0.3" opacity="0.3" />
+      <circle cx="32" cy="32" r="20" stroke="currentColor" strokeWidth="0.4" opacity="0.4" strokeDasharray="2 2" />
+      <path
+        d="M22 22L32 16L42 22V42L32 48L22 42V22Z"
+        stroke="currentColor"
+        strokeWidth="0.8"
+        fill="none"
+        opacity="0.5"
+      />
+      <path
+        d="M26 26L32 23L38 26V38L32 41L26 38V26Z"
+        stroke="currentColor"
+        strokeWidth="0.5"
+        fill="none"
+        opacity="0.3"
+      />
+      <circle cx="32" cy="32" r="3" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.4" />
+    </svg>
+  )
+}

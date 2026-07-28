@@ -51,7 +51,7 @@ export function GoldButton({
         size === "md" && "px-7 py-3.5 text-base rounded-[3px]",
         size === "lg" && "px-10 py-4.5 text-lg rounded-[3px]",
         variant === "primary" &&
-          "border border-[--accent-brass] text-[--accent-brass] hover:text-[#2A1A0A]",
+          "border border-[--accent-brass] text-[--accent-brass-text] hover:text-[#2A1A0A]",
         variant === "primary" &&
           "before:absolute before:inset-0 before:bg-[--accent-brass] before:translate-y-full before:transition-transform before:duration-400 before:ease-out hover:before:translate-y-0",
         variant === "primary" && "[&>*]:relative [&>*]:z-10",
@@ -122,7 +122,7 @@ export function GoldLink({
         size === "md" && "px-7 py-3.5 text-base rounded-[3px]",
         size === "lg" && "px-10 py-4.5 text-lg rounded-[3px]",
         variant === "primary" &&
-          "border border-[--accent-brass] text-[--accent-brass] hover:text-[#2A1A0A]",
+          "border border-[--accent-brass] text-[--accent-brass-text] hover:text-[#2A1A0A]",
         variant === "primary" &&
           "before:absolute before:inset-0 before:bg-[--accent-brass] before:translate-y-full before:transition-transform before:duration-400 before:ease-out hover:before:translate-y-0",
         variant === "primary" && "[&>*]:relative [&>*]:z-10",

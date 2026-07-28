@@ -20,37 +20,45 @@ const books = [
 
 export default function BooksPage() {
   return (
-    <div className="py-20 md:py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-        <SectionHeader
-          title="Books"
-          subtitle="Curated recommendations from our community — find your next read"
-        />
-
-        <div className="mt-14 md:mt-16 grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 justify-items-center">
-          {books.map((book) => (
-            <div key={book.title} className="flex flex-col items-center">
-              <Book3D
-                title={book.title}
-                author={book.author}
-                category={book.category}
-                rating={book.rating}
-                difficulty={book.difficulty}
-                summary={book.summary}
-                suggestedBy={book.suggestedBy}
-              />
-              <div className="mt-3 text-center">
-                <h3 className="font-heading text-xs tracking-wide text-[--text-primary]">{book.title}</h3>
-                <p className="text-[10px] text-[--text-secondary]">{book.author}</p>
-              </div>
-            </div>
-          ))}
+    <div>
+      <div className="py-20 md:py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+          <SectionHeader
+            title="Books"
+            subtitle="Curated recommendations from our community — find your next read"
+          />
         </div>
+      </div>
 
-        <div className="mt-14 text-center">
+      <div className="bg-library py-16 md:py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 justify-items-center">
+            {books.map((book) => (
+              <div key={book.title} className="flex flex-col items-center">
+                <Book3D
+                  title={book.title}
+                  author={book.author}
+                  category={book.category}
+                  rating={book.rating}
+                  difficulty={book.difficulty}
+                  summary={book.summary}
+                  suggestedBy={book.suggestedBy}
+                />
+                <div className="mt-3 text-center">
+                  <h3 className="font-heading text-xs tracking-wide text-[--text-on-library]">{book.title}</h3>
+                  <p className="text-[10px] text-[--text-on-library]/70">{book.author}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="py-14 md:py-16">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 text-center">
           <p className="text-sm text-[--text-secondary]">
             Have a book to recommend?{' '}
-            <a href="/contact" className="text-[--accent-brass] hover:underline">Suggest it here</a>
+            <a href="/contact" className="text-[--accent-brass-text] hover:underline">Suggest it here</a>
           </p>
         </div>
       </div>

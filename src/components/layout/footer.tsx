@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { SITE_NAME, NAV_LINKS, SOCIAL_LINKS } from "@/lib/constants"
-import { LogoMark, DomeDivider } from "@/lib/mughal-patterns"
+import { LogoMark, DomeDivider, ExLibrisStamp } from "@/lib/mughal-patterns"
 import { SocialIcons } from "@/components/ui/social-icons"
 
 export function Footer() {
@@ -12,6 +12,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-4">
               <LogoMark className="h-9 w-9" />
               <span className="font-heading text-lg tracking-wider text-[--text-primary]">{SITE_NAME}</span>
+              <ExLibrisStamp className="h-6 w-6 text-[--accent-gold-leaf] opacity-70" />
             </Link>
             <p className="text-sm text-[--text-secondary] max-w-md">
               Igniting the love for reading in Aurangabad — one Sunday, one book, one conversation at a time.
@@ -23,7 +24,7 @@ export function Footer() {
 
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 text-sm">
             <div>
-              <h4 className="mb-3 text-xs tracking-widest uppercase text-[--accent-brass] font-heading">Navigate</h4>
+              <h4 className="mb-3 text-xs tracking-widest uppercase text-[--accent-brass-text] font-heading">Navigate</h4>
               <ul className="space-y-2">
                 {NAV_LINKS.map((link) => (
                   <li key={link.href}>
@@ -39,7 +40,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="mb-3 text-xs tracking-widest uppercase text-[--accent-brass] font-heading">Connect</h4>
+              <h4 className="mb-3 text-xs tracking-widest uppercase text-[--accent-brass-text] font-heading">Connect</h4>
               <ul className="space-y-2">
                 <li>
                   <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-[--text-secondary] hover:text-[--accent-brass] transition-colors duration-400">
@@ -65,7 +66,7 @@ export function Footer() {
             </div>
 
             <div className="col-span-2 sm:col-span-1">
-              <h4 className="mb-3 text-xs tracking-widest uppercase text-[--accent-brass] font-heading">About</h4>
+              <h4 className="mb-3 text-xs tracking-widest uppercase text-[--accent-brass-text] font-heading">About</h4>
               <p className="text-[--text-secondary] leading-relaxed">
                 An open reading community in Aurangabad. No boundaries of religion, language, age, or gender — anyone who loves reading is welcome.
               </p>

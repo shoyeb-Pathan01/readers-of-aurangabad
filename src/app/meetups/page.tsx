@@ -46,14 +46,14 @@ export default function MeetupsPage() {
         />
 
         <div className="mt-12 md:mt-14">
-          <h3 className="font-heading text-xl tracking-wide text-[--accent-brass] mb-6">Upcoming Meetups</h3>
+          <h3 className="font-heading text-xl tracking-wide text-[--accent-brass-text] mb-6">Upcoming Meetups</h3>
 
           {upcomingMeetups.length > 0 ? (
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
               {upcomingMeetups.map((meetup) => (
                 <ArchCard key={meetup.date} className="h-full group border-l-2 border-l-[--accent-navy]">
                   <ArchCardContent className="pt-8 pb-6">
-                    <div className="flex items-center gap-2 text-sm text-[--accent-brass] mb-3">
+                    <div className="flex items-center gap-2 text-sm text-[--accent-brass-text] mb-3">
                       <Calendar className="h-4 w-4 transition-transform duration-400 group-hover:scale-110" />
                       <span className="font-medium">{meetup.date}</span>
                     </div>
@@ -96,7 +96,7 @@ export default function MeetupsPage() {
                 key={meetup.date}
                 className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 rounded-sm border border-[--border-hairline] bg-[--surface-card] px-4 py-3 card-shadow-soft group hover:card-shadow-warm transition-all duration-400"
               >
-                <span className="font-heading text-base text-[--accent-brass] w-24 shrink-0">{meetup.date}</span>
+                <span className="font-heading text-base text-[--accent-brass-text] w-24 shrink-0">{meetup.date}</span>
                 <span className="text-sm text-[--text-primary] font-medium">{meetup.venue}</span>
                 <span className="text-[--text-secondary] hidden sm:inline">&middot;</span>
                 <span className="text-sm text-[--text-secondary] flex-1">{meetup.topic}</span>

@@ -29,7 +29,7 @@ export function StatsSection() {
                 <ArchCard className="h-full">
                   <ArchCardContent className="flex flex-col items-center justify-center py-8 px-5">
                     <Icon className="h-7 w-7 text-[--accent-brass] mb-4" />
-                    <p className="font-heading text-3xl sm:text-4xl md:text-5xl text-[--accent-brass] leading-none">
+                    <p className="font-heading text-3xl sm:text-4xl md:text-5xl text-[--accent-brass-text] leading-none">
                       <CountUp end={s.value} duration={2} />
                       {s.suffix}
                     </p>

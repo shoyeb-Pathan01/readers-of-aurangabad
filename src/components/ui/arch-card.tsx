@@ -49,6 +49,7 @@ export function ArchCard({ children, className, href, tilt = true, torn = false,
     "relative overflow-hidden rounded-sm",
     "bg-[--surface-card] border border-[--border-hairline]",
     "card-shadow-warm",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--accent-brass] focus-visible:ring-offset-2 focus-visible:ring-offset-[--bg-base]",
     "transition-all duration-500 ease-out",
     hovered
       ? "card-shadow-lift -translate-y-1.5 border-[--accent-brass]/40 brass-border-glow"

@@ -15,10 +15,14 @@
   --text-secondary: #5A3F26;
   --accent-brass: #8A5A2E;
   --accent-brass-bright: #6E4520;
+  --accent-brass-text: #5E3D1C;
   --accent-burgundy: #8B4A42;
   --accent-emerald: #3F5940;
   --accent-navy: #2E3A54;
   --accent-marble: #241512;
+  --surface-library: #2E2015;
+  --text-on-library: #E8D9B8;
+  --accent-gold-leaf: #B8923D;
   --shadow-card: rgba(46, 27, 16, 0.14);
   --glass-bg: rgba(201, 168, 118, 0.82);
   --glass-border: rgba(107, 74, 38, 0.18);
@@ -42,10 +46,12 @@
   --text-secondary: #BFA97E;
   --accent-brass: #A67C3D;
   --accent-brass-bright: #C99A52;
+  --accent-brass-text: #D4A96A;
   --accent-burgundy: #6B1F2A;
   --accent-emerald: #1F4A34;
   --accent-navy: #1B2A4A;
   --accent-marble: #EFE7D8;
+  --accent-gold-leaf: #D4A96A;
   --shadow-card: rgba(163, 123, 61, 0.07);
   --glass-bg: rgba(26, 15, 12, 0.88);
   --glass-border: rgba(140, 107, 63, 0.10);
@@ -64,10 +70,14 @@
   --color-text-secondary: var(--text-secondary);
   --color-accent-brass: var(--accent-brass);
   --color-accent-brass-bright: var(--accent-brass-bright);
+  --color-accent-brass-text: var(--accent-brass-text);
   --color-accent-burgundy: var(--accent-burgundy);
   --color-accent-emerald: var(--accent-emerald);
   --color-accent-navy: var(--accent-navy);
   --color-accent-marble: var(--accent-marble);
+  --color-surface-library: var(--surface-library);
+  --color-text-on-library: var(--text-on-library);
+  --color-accent-gold-leaf: var(--accent-gold-leaf);
   --font-heading: var(--font-heading);
   --font-body: var(--font-body);
   --font-quote: var(--font-quote);
@@ -146,6 +156,12 @@
 }
 [data-theme="dark"] .bg-wood::before {
   background: repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(255,255,255,0.012) 3px, rgba(255,255,255,0.012) 4px);
+}
+
+.bg-library {
+  background-color: var(--surface-library);
+  color: var(--text-on-library);
+  position: relative;
 }
 
 .bg-paper { position: relative; }
@@ -324,6 +340,16 @@
 .enter-4 { animation: fade-in-up 0.8s 0.75s ease-out both; }
 .enter-5 { animation: fade-in-up 0.8s 0.95s ease-out both; }
 .enter-6 { animation: fade-in-up 0.8s 1.15s ease-out both; }
+
+/* ===== DROP CAP ===== */
+.drop-cap::first-letter {
+  font-family: var(--font-heading);
+  font-size: 3.2em;
+  float: left;
+  line-height: 0.8;
+  padding: 0.05em 0.08em 0 0;
+  color: var(--accent-brass-text);
+}
 
 /* ===== LIGHT RAYS ===== */
 @keyframes light-rays { 0% { transform: translateX(-10%) translateY(-5%); opacity: 0; } 50% { opacity: 0.055; } 100% { transform: translateX(10%) translateY(5%); opacity: 0; } }

@@ -41,7 +41,7 @@ export default function ContactPage() {
               </div>
 
               <div className="rounded-sm border border-[--accent-navy]/30 bg-[--surface-card] p-5 card-shadow-warm">
-                <h4 className="font-heading text-base tracking-wide text-[--accent-brass]">Connect With Us</h4>
+                <h4 className="font-heading text-base tracking-wide text-[--accent-brass-text]">Connect With Us</h4>
                 <p className="mt-1 text-xs text-[--text-secondary]">
                   Follow us on social media for the latest updates.
                 </p>
@@ -52,7 +52,7 @@ export default function ContactPage() {
                 <p className="text-xs italic text-[--text-secondary] leading-relaxed">
                   &ldquo;A book is a gift you can open again and again.&rdquo;
                 </p>
-                <p className="text-xs text-[--accent-brass] mt-0.5">&mdash; Readers of Aurangabad</p>
+                <p className="text-xs text-[--accent-brass-text] mt-0.5">&mdash; Readers of Aurangabad</p>
               </div>
             </div>
           </FadeIn>
@@ -62,7 +62,7 @@ export default function ContactPage() {
               <ArchCardContent className="pt-8 pb-6 px-6">
                 <div className="flex items-center gap-2 mb-1">
                   <Heart className="h-3.5 w-3.5 text-[--accent-burgundy]" />
-                  <h3 className="font-heading text-lg tracking-wide text-[--accent-brass]">Send a Letter</h3>
+                  <h3 className="font-heading text-lg tracking-wide text-[--accent-brass-text]">Send a Letter</h3>
                 </div>
                 <p className="text-xs text-[--text-secondary] mb-5">
                   Suggest a book, share feedback, or just say hello. We read every message.

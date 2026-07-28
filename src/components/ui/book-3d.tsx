@@ -217,12 +217,12 @@ export function Book3D({
         <p className="text-[11px] text-[--text-primary] font-heading leading-tight">{title}</p>
         <p className="text-[10px] text-[--text-secondary]">{author}</p>
         {category && (
-          <span className="inline-block mt-1.5 px-2 py-0.5 rounded-full border border-[--accent-brass]/30 text-[10px] text-[--accent-brass]">
+          <span className="inline-block mt-1.5 px-2 py-0.5 rounded-full border border-[--accent-brass]/30 text-[10px] text-[--accent-brass-text]">
             {category}
           </span>
         )}
         {rating && (
-          <div className="mt-1 text-[11px] text-[--accent-brass]">
+          <div className="mt-1 text-[11px] text-[--accent-brass-text]">
             {"★".repeat(Math.floor(rating))}{"☆".repeat(5 - Math.floor(rating))}
           </div>
         )}
