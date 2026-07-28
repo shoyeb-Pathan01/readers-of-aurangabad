@@ -2,32 +2,33 @@
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-/* ===== VICTORIAN LIBRARY COLOR SYSTEM ===== */
+/* ===== KRAFT PAPER COLOR SYSTEM ===== */
 
 :root {
-  /* Light theme — "curtains half-drawn, dim sepia" */
-  --bg-base: #D8C7A2;
-  --bg-alt: #CDB98D;
-  --surface-card: #E0D0AC;
-  --surface-alt: #CDB98D;
-  --border-hairline: #7A5A2E;
-  --text-primary: #3A1F14;
-  --text-secondary: #5C4530;
-  --accent-brass: #7A5A2E;
-  --accent-brass-bright: #5E4520;
-  --accent-burgundy: #7A2530;
-  --accent-emerald: #2E5940;
-  --accent-navy: #28395C;
+  /* Light theme — warm kraft paper / handwritten letter */
+  --bg-base: #C9A876;
+  --bg-alt: #B9955F;
+  --surface-card: #DCC49A;
+  --surface-alt: #C4A06A;
+  --border-hairline: #6B4A26;
+  --text-primary: #2E1B10;
+  --text-secondary: #5A3F26;
+  --accent-brass: #8A5A2E;
+  --accent-brass-bright: #6E4520;
+  --accent-burgundy: #8B4A42;
+  --accent-emerald: #3F5940;
+  --accent-navy: #2E3A54;
   --accent-marble: #241512;
-  --shadow-card: rgba(58, 31, 20, 0.08);
-  --glass-bg: rgba(216, 199, 162, 0.80);
-  --glass-border: rgba(122, 90, 46, 0.12);
-  --vignette: radial-gradient(ellipse at center, transparent 55%, rgba(58, 31, 20, 0.20) 100%);
-  --warm-light: radial-gradient(ellipse at 50% 0%, rgba(122, 90, 46, 0.08) 0%, transparent 60%);
-  --warm-glow: radial-gradient(ellipse at 50% 50%, rgba(122, 90, 46, 0.04) 0%, transparent 70%);
+  --shadow-card: rgba(46, 27, 16, 0.14);
+  --glass-bg: rgba(201, 168, 118, 0.82);
+  --glass-border: rgba(107, 74, 38, 0.18);
+  --vignette: radial-gradient(ellipse at center, transparent 50%, rgba(46, 27, 16, 0.22) 100%);
+  --warm-light: radial-gradient(ellipse at 50% 0%, rgba(138, 90, 46, 0.10) 0%, transparent 60%);
+  --warm-glow: radial-gradient(ellipse at 50% 50%, rgba(138, 90, 46, 0.05) 0%, transparent 70%);
   --font-heading: "Cormorant Garamond", serif;
   --font-body: "Inter", sans-serif;
   --font-quote: "Libre Baskerville", serif;
+  --font-script: "Caveat", cursive;
 }
 
 [data-theme="dark"] {
@@ -70,6 +71,7 @@
   --font-heading: var(--font-heading);
   --font-body: var(--font-body);
   --font-quote: var(--font-quote);
+  --font-script: var(--font-script);
 }
 
 /* ===== BASE ===== */
@@ -149,8 +151,15 @@
 .bg-paper { position: relative; }
 .bg-paper::before {
   content: ""; position: absolute; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23paper)' opacity='0.015'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23paper)' opacity='0.06'/%3E%3C/svg%3E");
   background-repeat: repeat; background-size: 200px 200px;
+  pointer-events: none; z-index: 0;
+}
+.bg-paper::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 180px 120px at 15% 85%, rgba(107,74,38,0.10), transparent 70%),
+    radial-gradient(ellipse 140px 100px at 85% 20%, rgba(107,74,38,0.08), transparent 70%);
   pointer-events: none; z-index: 0;
 }
 
@@ -167,13 +176,16 @@
 }
 
 /* ===== SHADOWS ===== */
-.card-shadow-soft { box-shadow: 0 1px 6px -3px var(--shadow-card); }
-.card-shadow-warm { box-shadow: 0 2px 12px -6px var(--shadow-card); }
+.card-shadow-soft { box-shadow: 0 2px 8px -3px var(--shadow-card); }
+.card-shadow-warm { box-shadow: 0 8px 24px rgba(46, 27, 16, 0.16), 0 2px 6px rgba(46, 27, 16, 0.10); }
 .card-shadow-premium {
-  box-shadow: 0 2px 12px -6px var(--shadow-card), 0 8px 24px -12px var(--shadow-card);
+  box-shadow: 0 4px 16px -8px var(--shadow-card), 0 12px 32px -16px var(--shadow-card);
 }
 .card-shadow-lift {
-  box-shadow: 0 6px 20px -10px var(--shadow-card), 0 20px 48px -20px rgba(163, 123, 61, 0.05);
+  box-shadow: 0 8px 24px -12px var(--shadow-card), 0 24px 48px -24px var(--shadow-card);
+}
+.card-shadow-wax {
+  box-shadow: 0 2px 4px -2px rgba(46,27,16,0.18), 0 6px 12px -4px rgba(46,27,16,0.12), inset 0 1px 0 rgba(255,255,255,0.08);
 }
 .brass-glow { box-shadow: 0 0 20px -4px var(--accent-brass), 0 0 40px -12px var(--accent-brass); }
 .brass-border-glow { box-shadow: inset 0 0 0 1px var(--accent-brass), 0 0 20px -6px var(--accent-brass); }
@@ -191,6 +203,20 @@
     0 6px 12px -6px var(--shadow-card),
     0 16px 24px -12px var(--shadow-card),
     0 28px 48px -20px var(--shadow-card);
+}
+
+/* ===== TORN / DECKLED EDGE ===== */
+.torn-edge {
+  clip-path: polygon(
+    0.5% 0.5%, 4% 1.2%, 10% 0.3%, 16% 1.5%, 22% 0.6%, 28% 1.8%, 34% 0.4%, 40% 1.6%, 46% 0.7%,
+    52% 1.9%, 58% 0.2%, 64% 1.4%, 70% 0.8%, 76% 2.0%, 82% 0.5%, 88% 1.3%, 94% 0.9%, 99.5% 1.7%,
+    99.2% 5%, 98.5% 12%, 99.3% 18%, 98.2% 24%, 99.4% 30%, 98.1% 36%, 99.5% 42%, 98.3% 48%,
+    99.6% 54%, 98.0% 60%, 99.4% 66%, 98.2% 72%, 99.5% 78%, 98.1% 84%, 99.3% 90%, 98.4% 96%, 99.2% 99%,
+    94% 99.5%, 88% 98.8%, 82% 99.6%, 76% 98.5%, 70% 99.4%, 64% 98.2%, 58% 99.5%, 52% 98.1%,
+    46% 99.6%, 40% 98.3%, 34% 99.5%, 28% 98.0%, 22% 99.4%, 16% 98.2%, 10% 99.5%, 4% 98.6%, 0.5% 99.2%,
+    0.8% 94%, 0.2% 88%, 1.5% 82%, 0.4% 76%, 1.8% 70%, 0.3% 64%, 1.6% 58%, 0.6% 52%,
+    2.0% 46%, 0.5% 40%, 1.4% 34%, 0.7% 28%, 1.9% 22%, 0.2% 16%, 1.3% 10%, 0.9% 4%
+  );
 }
 
 /* ===== CARD TILT ===== */

@@ -308,3 +308,77 @@ export function CharbaghGrid({ children, className }: { children: React.ReactNod
     </div>
   )
 }
+
+export function HeartDoodle({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M12 21C12 21 3.5 15.5 3.5 9.5C3.5 6.5 5.8 4.5 8 4.5C9.5 4.5 11 5.5 12 7C13 5.5 14.5 4.5 16 4.5C18.2 4.5 20.5 6.5 20.5 9.5C20.5 15.5 12 21 12 21Z"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12 19.5C12 19.5 5 15 5 10C5 7.8 6.5 6 8.5 6C10 6 11.5 7 12 8.5C12.5 7 14 6 15.5 6C17.5 6 19 7.8 19 10C19 15 12 19.5 12 19.5Z"
+        stroke="currentColor"
+        strokeWidth="0.5"
+        fill="none"
+        opacity="0.3"
+      />
+    </svg>
+  )
+}
+
+export function TwineBow({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      width="40"
+      height="24"
+      viewBox="0 0 40 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M20 12C20 12 26 4 32 4C36 4 38 7 38 10C38 14 34 16 20 12Z"
+        stroke="currentColor"
+        strokeWidth="0.8"
+        fill="none"
+        opacity="0.6"
+      />
+      <path
+        d="M20 12C20 12 14 4 8 4C4 4 2 7 2 10C2 14 6 16 20 12Z"
+        stroke="currentColor"
+        strokeWidth="0.8"
+        fill="none"
+        opacity="0.6"
+      />
+      <path
+        d="M18 12L14 20"
+        stroke="currentColor"
+        strokeWidth="0.6"
+        fill="none"
+        opacity="0.4"
+      />
+      <path
+        d="M22 12L26 20"
+        stroke="currentColor"
+        strokeWidth="0.6"
+        fill="none"
+        opacity="0.4"
+      />
+      <circle cx="20" cy="12" r="2" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.5" />
+    </svg>
+  )
+}

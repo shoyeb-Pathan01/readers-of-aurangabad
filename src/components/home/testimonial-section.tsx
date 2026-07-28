@@ -4,6 +4,7 @@ import { Quote } from "lucide-react"
 import { SectionHeader } from "@/components/ui/section-header"
 import { ArchCard, ArchCardContent } from "@/components/ui/arch-card"
 import { StaggerContainer, StaggerItem } from "@/components/ui/motion-wrapper"
+import { HeartDoodle } from "@/lib/mughal-patterns"
 
 const testimonials = [
   {
@@ -35,10 +36,10 @@ export function TestimonialSection() {
         <StaggerContainer className="mt-12 md:mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
           {testimonials.map((t) => (
             <StaggerItem key={t.name}>
-              <ArchCard className="relative h-full">
+              <ArchCard className="relative h-full" torn>
                 <ArchCardContent className="pt-8 pb-6">
-                  <Quote className="mb-4 h-7 w-7 text-[--accent-brass] opacity-25" />
-                  <p className="font-quote text-sm leading-relaxed italic text-[--text-secondary]">
+                  <HeartDoodle className="mb-3 h-6 w-6 text-[--accent-burgundy]" />
+                  <p className="font-script text-lg leading-relaxed text-[--text-primary]" style={{ transform: "rotate(-0.5deg)" }}>
                     &ldquo;{t.quote}&rdquo;
                   </p>
                   <div className="mt-6 border-t border-[--border-hairline] pt-4">

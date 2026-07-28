@@ -9,10 +9,11 @@ interface ArchCardProps {
   className?: string
   href?: string
   tilt?: boolean
+  torn?: boolean
   onClick?: () => void
 }
 
-export function ArchCard({ children, className, href, tilt = true, onClick }: ArchCardProps) {
+export function ArchCard({ children, className, href, tilt = true, torn = false, onClick }: ArchCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [tiltStyle, setTiltStyle] = useState({})
   const [hovered, setHovered] = useState(false)
@@ -53,6 +54,7 @@ export function ArchCard({ children, className, href, tilt = true, onClick }: Ar
       ? "card-shadow-lift -translate-y-1.5 border-[--accent-brass]/40 brass-border-glow"
       : "",
     href && "cursor-pointer",
+    torn && "torn-edge",
     "bg-paper",
     className,
   )

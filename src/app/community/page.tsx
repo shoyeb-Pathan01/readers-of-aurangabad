@@ -91,7 +91,7 @@ export default function CommunityPage() {
             const accentColor = value.color === "navy" ? "--accent-navy" : "--accent-brass"
             return (
               <StaggerItem key={value.title}>
-                <ArchCard className={cn("h-full text-center", value.color === "navy" && "border-t-2 border-t-[--accent-navy]")}>
+                <ArchCard className={cn("h-full text-center", value.color === "navy" && "border-t-2 border-t-[--accent-navy]")} torn>
                   <ArchCardContent className="flex flex-col items-center pt-6">
                     <Icon className="mb-4 h-8 w-8" style={{ color: `var(${accentColor})` }} />
                     <h3 className="font-heading text-lg tracking-wide text-[--text-primary]">{value.title}</h3>
@@ -116,13 +116,13 @@ export default function CommunityPage() {
               { name: "Neha Kulkarni", role: "Social Media & Design", bio: "Captures meetup moments and runs our online presence. Neha creates the visual identity for the community." },
             ].map((organizer) => (
               <StaggerItem key={organizer.name}>
-                <ArchCard className="h-full">
+                <ArchCard className="h-full" torn>
                   <ArchCardContent className="flex flex-col items-center text-center pt-8 px-5 pb-6">
                     <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-[--accent-brass]/40 bg-[--surface-card] text-xl font-heading text-[--accent-brass]">
                       {organizer.name.charAt(0)}
                     </div>
                     <h3 className="font-heading text-lg tracking-wide text-[--text-primary]">{organizer.name}</h3>
-                    <p className="mt-1 text-xs uppercase tracking-wider text-[--accent-brass]">{organizer.role}</p>
+                    <p className="mt-1 font-script text-base text-[--accent-brass]" style={{ transform: "rotate(-1deg)" }}>{organizer.role}</p>
                     <p className="mt-3 text-sm leading-relaxed text-[--text-secondary]">{organizer.bio}</p>
                   </ArchCardContent>
                 </ArchCard>

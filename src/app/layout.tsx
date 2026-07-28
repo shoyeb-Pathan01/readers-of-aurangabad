@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Cormorant_Garamond, Inter, Libre_Baskerville } from "next/font/google"
+import { Cormorant_Garamond, Inter, Libre_Baskerville, Caveat } from "next/font/google"
 import "./globals.css"
 import { Providers } from "@/components/providers"
 import { Nav } from "@/components/layout/nav"
@@ -22,6 +22,13 @@ const libreBaskerville = Libre_Baskerville({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-quote",
+  display: "swap",
+})
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-script",
   display: "swap",
 })
 
@@ -49,7 +56,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${cormorant.variable} ${inter.variable} ${libreBaskerville.variable}`}
+      className={`${cormorant.variable} ${inter.variable} ${libreBaskerville.variable} ${caveat.variable}`}
     >
       <head>
         <script

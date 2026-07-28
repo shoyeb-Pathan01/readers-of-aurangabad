@@ -30,13 +30,13 @@ export function FeaturedQuoteSection() {
         <SectionHeader title="A Moment with Books" subtitle="Words that inspire our reading journey" />
 
         <ScaleReveal key={current}>
-          <ArchCard className="relative mt-12 md:mt-14 text-center">
+          <ArchCard className="relative mt-12 md:mt-14 text-center" torn>
             <ArchCardContent className="px-8 py-10 md:px-12">
               <Quote className="mx-auto mb-6 h-9 w-9 text-[--accent-brass] opacity-20" />
-              <blockquote className="font-quote text-xl leading-relaxed italic text-[--text-primary] sm:text-2xl md:text-3xl">
+              <blockquote className="font-script text-2xl leading-relaxed text-[--text-primary] sm:text-3xl md:text-4xl" style={{ transform: "rotate(-1.5deg)" }}>
                 &ldquo;{quote.text}&rdquo;
               </blockquote>
-              <p className="mt-6 text-sm text-[--accent-brass] tracking-wide">&mdash; {quote.author}</p>
+              <p className="mt-6 font-script text-lg text-[--accent-brass] tracking-wide" style={{ transform: "rotate(1deg)" }}>&mdash; {quote.author}</p>
               <div className="mt-8 flex items-center justify-center gap-2.5">
                 {quotes.map((_, i) => (
                   <button

@@ -18,7 +18,7 @@ export function FeaturedBookSection() {
               className="items-start text-left"
             />
             <FadeIn>
-              <ArchCard className="relative w-full max-w-md mx-auto lg:mx-0 mt-8">
+              <ArchCard className="relative w-full max-w-md mx-auto lg:mx-0 mt-8" torn>
                 <ArchCardContent className="pt-8 px-6 pb-6">
                   <div className="flex items-start gap-2 mb-3">
                     <Star className="h-3.5 w-3.5 fill-[--accent-brass] text-[--accent-brass]" />
