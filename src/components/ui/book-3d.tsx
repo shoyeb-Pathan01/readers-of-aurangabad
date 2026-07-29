@@ -132,9 +132,15 @@ export function Book3D({
               boxShadow: `inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.15)`,
             }}
           >
-          <div className="text-center px-3">
-              <BookOpen className="mx-auto h-7 w-7 text-white/25" />
-              <div className="mx-auto mt-2 h-[1px] w-6 bg-[--accent-brass]/30" />
+          <div className="flex h-full w-full flex-col items-center justify-between px-3 py-4">
+              <div className="mx-auto mt-1 h-[1px] w-6 bg-[--accent-brass]/40" />
+              <p
+                className="line-clamp-4 text-center text-[11px] font-heading leading-snug text-white/85 [overflow-wrap:anywhere]"
+                title={title}
+              >
+                {title}
+              </p>
+              <BookOpen className="mx-auto h-5 w-5 text-white/30" />
             </div>
           </div>
 
@@ -213,7 +219,7 @@ export function Book3D({
       </div>
 
       {/* Info below */}
-      <div className={cn("text-center transition-all duration-500", hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1")}>
+      <div className={cn("relative z-10 mt-2 max-w-[130px] text-center transition-all duration-500", hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1")}>
         <p className="text-[11px] text-[--text-primary] font-heading leading-tight">{title}</p>
         <p className="text-[10px] text-[--text-secondary]">{author}</p>
         {category && (

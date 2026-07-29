@@ -44,8 +44,8 @@ export default function BooksPage() {
                   summary={book.summary}
                   suggestedBy={book.suggestedBy}
                 />
-                <div className="mt-3 text-center">
-                  <h3 className="font-heading text-xs tracking-wide text-[--text-on-library]">{book.title}</h3>
+                <div className="mt-3 max-w-[120px] text-center">
+                  <h3 className="font-heading text-xs tracking-wide text-[--text-on-library] leading-snug">{book.title}</h3>
                   <p className="text-[10px] text-[--text-on-library]/70">{book.author}</p>
                 </div>
               </div>
