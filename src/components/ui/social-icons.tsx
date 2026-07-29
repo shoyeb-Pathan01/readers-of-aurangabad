@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils"
 import { SOCIAL_LINKS } from "@/lib/constants"
-import { Camera, MessageCircle, Send, Mail, MapPin } from "lucide-react"
+import { Camera, MessageCircle, Send, Mail } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
 
 interface SocialIconProps {
@@ -31,11 +31,10 @@ function SocialIcon({ icon: Icon, href, label }: SocialIconProps) {
 export function SocialIcons({ className }: { className?: string }) {
   return (
     <div className={cn("flex flex-wrap items-center gap-2.5", className)}>
+      <SocialIcon icon={Mail} href={`mailto:${SOCIAL_LINKS.email}`} label="Email" />
       <SocialIcon icon={Camera} href={SOCIAL_LINKS.instagram} label="Instagram" />
       <SocialIcon icon={MessageCircle} href={SOCIAL_LINKS.whatsapp} label="WhatsApp" />
       <SocialIcon icon={Send} href={SOCIAL_LINKS.telegram} label="Telegram" />
-      <SocialIcon icon={Mail} href={`mailto:${SOCIAL_LINKS.email}`} label="Email" />
-      <SocialIcon icon={MapPin} href="#" label="Aurangabad" />
     </div>
   )
 }

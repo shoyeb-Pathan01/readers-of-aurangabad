@@ -217,8 +217,13 @@ export function Book3D({
         <p className="text-[11px] text-[--text-primary] font-heading leading-tight">{title}</p>
         <p className="text-[10px] text-[--text-secondary]">{author}</p>
         {category && (
-          <span className="inline-block mt-1.5 px-2 py-0.5 rounded-full border border-[--accent-brass]/30 text-[10px] text-[--accent-brass-text]">
+          <span className="inline-block mt-1.5 mr-1 px-2 py-0.5 rounded-full border border-[--accent-brass]/30 text-[10px] text-[--accent-brass-text]">
             {category}
+          </span>
+        )}
+        {difficulty && (
+          <span className="inline-block mt-1.5 px-2 py-0.5 rounded-full border border-[--border-hairline] text-[10px] text-[--text-secondary]">
+            {difficulty}
           </span>
         )}
         {rating && (
@@ -228,6 +233,9 @@ export function Book3D({
         )}
         {summary && (
           <p className="mt-1 text-[10px] text-[--text-secondary] leading-tight max-w-[130px] mx-auto">{summary}</p>
+        )}
+        {suggestedBy && (
+          <p className="mt-1 text-[9px] text-[--text-secondary]/70 italic">Suggested by {suggestedBy}</p>
         )}
       </div>
     </div>

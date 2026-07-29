@@ -31,7 +31,7 @@ export function HeroSection() {
 
       <div className="absolute inset-0 jali-bg" />
 
-      <IwanGateway className="relative z-10 mx-auto max-w-5xl px-6 text-center py-16">
+      <IwanGateway className="relative z-10 mx-auto max-w-5xl px-6 text-center py-10 md:py-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,13 +53,13 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: baseDur, delay: stagger * 2, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <div className="relative inline-block px-10 py-8 md:py-10 mt-6">
+          <div className="relative inline-block px-10 py-6 md:py-8 mt-4">
             <DoubleBorderFrame className="absolute inset-0 text-[--accent-brass]" />
             <ScallopedCorner className="top-0 left-0 text-[--accent-brass]" />
             <ScallopedCorner className="top-0 right-0 text-[--accent-brass] scale-x-[-1]" />
             <ScallopedCorner className="bottom-0 left-0 text-[--accent-brass] scale-y-[-1]" />
             <ScallopedCorner className="bottom-0 right-0 text-[--accent-brass] scale-[-1]" />
-            <h1 className="font-heading text-5xl tracking-wider text-[--text-primary] sm:text-6xl md:text-7xl lg:text-8xl leading-tight">
+            <h1 className="font-heading text-4xl tracking-wider text-[--text-primary] sm:text-5xl md:text-6xl lg:text-7xl leading-tight">
               Readers of
               <br />
               <span className="text-[--accent-brass]">Aurangabad</span>
@@ -82,7 +82,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: baseDur * 0.6, delay: stagger * 4, ease: "easeOut" }}
         >
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <GoldLink href="/meetups" variant="primary" size="lg">
               Join a Meetup
             </GoldLink>
@@ -97,7 +97,7 @@ export function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: stagger * 5, ease: "easeOut" }}
         >
-          <div className="mt-12 flex items-center justify-center gap-3 text-sm text-[--text-secondary]">
+          <div className="mt-8 flex items-center justify-center gap-3 text-sm text-[--text-secondary]">
             <span className="inline-block h-px w-10 bg-[--border-hairline]" />
             Open to all &middot; Free to join
             <span className="inline-block h-px w-10 bg-[--border-hairline]" />

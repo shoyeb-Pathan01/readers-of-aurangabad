@@ -1,6 +1,6 @@
 "use client"
 
-import { Settings, Save } from "lucide-react"
+import { Save } from "lucide-react"
 import { GoldButton } from "@/components/ui/gold-button"
 import { useState } from "react"
 

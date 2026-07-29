@@ -1,11 +1,12 @@
 "use client"
 
-import { BookOpen, Sparkles, Star } from "lucide-react"
+import { Star } from "lucide-react"
 import { SectionHeader } from "@/components/ui/section-header"
 import { ArchCard, ArchCardContent } from "@/components/ui/arch-card"
 import { GoldLink } from "@/components/ui/gold-button"
 import { FadeIn } from "@/components/ui/motion-wrapper"
 import { ExLibrisStamp } from "@/lib/mughal-patterns"
+import { Book3D } from "@/components/ui/book-3d"
 
 export function FeaturedBookSection() {
   return (
@@ -49,15 +50,13 @@ export function FeaturedBookSection() {
 
           <div className="order-1 lg:order-2 flex justify-center">
             <FadeIn>
-              <div className="group relative w-56 h-72 sm:w-64 sm:h-80">
-                <div className="absolute inset-0 rounded-sm bg-gradient-to-br from-[--accent-brass]/12 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative w-full h-full flex items-center justify-center rounded-sm border border-[--border-hairline] bg-[--surface-card] card-shadow-premium transition-all duration-500 group-hover:scale-[1.04] group-hover:border-[--accent-brass] group-hover:book-shadow-lg">
-                  <div className="text-center p-6">
-                    <BookOpen className="mx-auto h-20 w-20 text-[--accent-brass] transition-transform duration-500 group-hover:scale-110" />
-                    <Sparkles className="mx-auto mt-6 h-5 w-5 text-[--accent-brass] animate-glow-pulse" />
-                  </div>
-                </div>
-              </div>
+              <Book3D
+                title="The Alchemist"
+                author="Paulo Coelho"
+                category="Fiction"
+                rating={4}
+                href="/books"
+              />
             </FadeIn>
           </div>
         </div>

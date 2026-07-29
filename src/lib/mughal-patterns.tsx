@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export function JaliPattern({ className }: { className?: string }) {
   return (
     <svg
@@ -188,7 +190,7 @@ export function DoubleBorderFrame({ className }: { className?: string }) {
 
 export function LogoMark({ className }: { className?: string }) {
   return (
-    <img
+    <Image
       src="/logo.png"
       alt="Readers of Aurangabad"
       className={className}

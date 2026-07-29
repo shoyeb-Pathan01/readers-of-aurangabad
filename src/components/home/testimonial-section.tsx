@@ -1,8 +1,8 @@
 "use client"
 
-import { Quote } from "lucide-react"
 import { SectionHeader } from "@/components/ui/section-header"
 import { ArchCard, ArchCardContent } from "@/components/ui/arch-card"
+import { GoldLink } from "@/components/ui/gold-button"
 import { StaggerContainer, StaggerItem } from "@/components/ui/motion-wrapper"
 import { HeartDoodle } from "@/lib/mughal-patterns"
 
@@ -51,6 +51,12 @@ export function TestimonialSection() {
             </StaggerItem>
           ))}
         </StaggerContainer>
+
+        <div className="mt-10 flex justify-center">
+          <GoldLink href="/community" variant="secondary" size="md">
+            More Reviews
+          </GoldLink>
+        </div>
       </div>
     </section>
   )

@@ -1,6 +1,6 @@
 "use client"
 
-import { MessageSquare, Eye, EyeOff, Trash2 } from "lucide-react"
+import { Eye, EyeOff, Trash2 } from "lucide-react"
 
 const reviews = [
   { id: "1", book: "The Alchemist", member: "Rahul D.", rating: 5, comment: "A beautiful story about following your dreams. Changed my perspective on life.", status: "visible" as const },
