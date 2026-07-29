@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState, useEffect } from "react"
+import { useRef, useEffect } from "react"
 import { motion, useInView } from "framer-motion"
 
 interface FadeInProps {
@@ -13,14 +13,7 @@ interface FadeInProps {
 
 export function FadeIn({ children, className, delay = 0, y = 24, duration = 0.8 }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: false, margin: "-30px" })
-  const [hasBeenVisible, setHasBeenVisible] = useState(false)
-
-  useEffect(() => {
-    if (inView && !hasBeenVisible) setHasBeenVisible(true)
-  }, [inView, hasBeenVisible])
-
-  const isVisible = hasBeenVisible || inView
+  const isVisible = useInView(ref, { once: true, margin: "-30px" })
 
   return (
     <motion.div
@@ -43,14 +36,7 @@ interface StaggerChildrenProps {
 
 export function StaggerContainer({ children, className, staggerDelay = 0.1 }: StaggerChildrenProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: false, margin: "-30px" })
-  const [hasBeenVisible, setHasBeenVisible] = useState(false)
-
-  useEffect(() => {
-    if (inView && !hasBeenVisible) setHasBeenVisible(true)
-  }, [inView, hasBeenVisible])
-
-  const isVisible = hasBeenVisible || inView
+  const isVisible = useInView(ref, { once: true, margin: "-30px" })
 
   return (
     <motion.div
