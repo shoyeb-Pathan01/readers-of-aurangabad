@@ -31,7 +31,7 @@ export function HeroSection() {
 
       <div className="absolute inset-0 jali-bg" />
 
-      <IwanGateway className="relative z-10 mx-auto max-w-5xl px-6 text-center py-10 md:py-12">
+      <IwanGateway className="relative z-10 mx-auto max-w-5xl px-6 text-center pt-20 pb-8 md:pt-24 md:pb-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
