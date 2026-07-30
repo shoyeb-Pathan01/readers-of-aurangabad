@@ -77,6 +77,9 @@ export function Footer() {
             <p className="text-xs text-[--text-secondary]">
               &copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
             </p>
+            <p className="mt-1.5 text-xs text-[--text-secondary]/70">
+              Crafted for Book Lovers with 💓 by Shoyeb Khan
+            </p>
           </div>
         </div>
       </div>
