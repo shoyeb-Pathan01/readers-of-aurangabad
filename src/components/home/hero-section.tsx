@@ -23,13 +23,10 @@ export function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-texture warm-light"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       <Hero3DScene />
       <div className="absolute inset-0 bg-gradient-to-b from-[--bg-base]/70 via-transparent to-[--bg-base]" />
-      <div className="light-rays" />
-
-      <div className="absolute inset-0 jali-bg" />
 
       <IwanGateway className="relative z-10 mx-auto max-w-5xl px-6 text-center pt-12 pb-6 md:pt-14 md:pb-8">
         <motion.div

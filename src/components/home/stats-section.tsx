@@ -14,7 +14,7 @@ const stats = [
 
 export function StatsSection() {
   return (
-    <section className="py-20 md:py-24 lg:py-32 bg-texture warm-light overflow-hidden">
+    <section className="py-20 md:py-24 lg:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <SectionHeader
           title="Our Reach"

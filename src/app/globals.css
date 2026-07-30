@@ -112,24 +112,7 @@
   section { position: relative; }
 }
 
-/* ===== WARM LIGHTING ===== */
-.warm-light::before {
-  content: ""; position: absolute; inset: 0;
-  background: var(--warm-light);
-  pointer-events: none; z-index: 0;
-}
-.warm-glow::after {
-  content: ""; position: absolute; inset: 0;
-  background: var(--warm-glow);
-  pointer-events: none; z-index: 0;
-}
 
-/* ===== VIGNETTE ===== */
-.vignette::after {
-  content: ""; position: absolute; inset: 0;
-  background: var(--vignette);
-  pointer-events: none; z-index: 1;
-}
 
 /* ===== GLASS NAV ===== */
 .glass-nav {
@@ -140,57 +123,6 @@
 }
 
 /* ===== TEXTURES ===== */
-.bg-texture { position: relative; }
-.bg-texture::before {
-  content: ""; position: absolute; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' fill='transparent' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
-  background-repeat: repeat; background-size: 120px 120px;
-  pointer-events: none; z-index: 0;
-}
-
-.bg-wood { position: relative; }
-.bg-wood::before {
-  content: ""; position: absolute; inset: 0;
-  background: repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0,0,0,0.015) 3px, rgba(0,0,0,0.015) 4px);
-  pointer-events: none; z-index: 0;
-}
-[data-theme="dark"] .bg-wood::before {
-  background: repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(255,255,255,0.012) 3px, rgba(255,255,255,0.012) 4px);
-}
-
-.bg-library {
-  background-color: var(--surface-library);
-  color: var(--text-on-library);
-  position: relative;
-}
-
-.bg-paper { position: relative; }
-.bg-paper::before {
-  content: ""; position: absolute; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23paper)' opacity='0.06'/%3E%3C/svg%3E");
-  background-repeat: repeat; background-size: 200px 200px;
-  pointer-events: none; z-index: 0;
-}
-.bg-paper::after {
-  content: ""; position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 180px 120px at 15% 85%, rgba(107,74,38,0.10), transparent 70%),
-    radial-gradient(ellipse 140px 100px at 85% 20%, rgba(107,74,38,0.08), transparent 70%);
-  pointer-events: none; z-index: 0;
-}
-
-/* ===== JALI BACKGROUND ===== */
-.jali-bg { position: relative; }
-.jali-bg::before {
-  content: ""; position: absolute; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 100h200M100 0v200M0 0l200 200M200 0L0 200M0 50h200M0 150h200M50 0v200M150 0v200' stroke='%23A67C3D' stroke-width='0.3' opacity='0.045'/%3E%3Cpath d='M100 50a50 50 0 010 100 50 50 0 010-100z' stroke='%23A67C3D' stroke-width='0.2' fill='none' opacity='0.035'/%3E%3C/svg%3E");
-  background-repeat: repeat; background-size: 200px 200px;
-  pointer-events: none; z-index: 0;
-}
-[data-theme="dark"] .jali-bg::before {
-  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 100h200M100 0v200M0 0l200 200M200 0L0 200M0 50h200M0 150h200M50 0v200M150 0v200' stroke='%23C99A52' stroke-width='0.3' opacity='0.055'/%3E%3Cpath d='M100 50a50 50 0 010 100 50 50 0 010-100z' stroke='%23C99A52' stroke-width='0.2' fill='none' opacity='0.04'/%3E%3C/svg%3E");
-}
-
 /* ===== SHADOWS ===== */
 .card-shadow-soft { box-shadow: 0 2px 8px -3px var(--shadow-card); }
 .card-shadow-warm { box-shadow: 0 8px 24px rgba(46, 27, 16, 0.16), 0 2px 6px rgba(46, 27, 16, 0.10); }
@@ -350,13 +282,6 @@
   color: var(--accent-brass-text);
 }
 
-/* ===== LIGHT RAYS ===== */
-@keyframes light-rays { 0% { transform: translateX(-10%) translateY(-5%); opacity: 0; } 50% { opacity: 0.055; } 100% { transform: translateX(10%) translateY(5%); opacity: 0; } }
-.light-rays {
-  position: absolute; inset: 0;
-  background: linear-gradient(135deg, transparent 30%, var(--accent-brass) 45%, transparent 60%);
-  opacity: 0.02; animation: light-rays 10s ease-in-out infinite; pointer-events: none;
-}
 
 /* ===== LIGHTBOX ===== */
 .lightbox-overlay {

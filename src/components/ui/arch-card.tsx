@@ -56,7 +56,6 @@ export function ArchCard({ children, className, href, tilt = true, torn = false,
       : "",
     href && "cursor-pointer",
     torn && "torn-edge",
-    "bg-paper",
     className,
   )
 

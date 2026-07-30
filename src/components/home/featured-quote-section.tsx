@@ -25,7 +25,7 @@ export function FeaturedQuoteSection() {
   const quote = quotes[current]
 
   return (
-    <section className="py-20 md:py-24 lg:py-32 bg-texture warm-light">
+    <section className="py-20 md:py-24 lg:py-32">
       <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-10">
         <SectionHeader title="A Moment with Books" subtitle="Words that inspire our reading journey" />
 

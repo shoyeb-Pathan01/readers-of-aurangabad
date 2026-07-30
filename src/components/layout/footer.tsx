@@ -6,8 +6,7 @@ import { SocialIcons } from "@/components/ui/social-icons"
 export function Footer() {
   return (
     <footer className="relative border-t border-[--border-hairline] bg-[--bg-alt]">
-      <div className="jali-bg">
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-10">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-10">
           <div className="flex flex-col items-center text-center mb-8">
             <Link href="/" className="flex items-center gap-3 mb-4">
               <LogoMark className="h-9 w-9" />
@@ -82,7 +81,6 @@ export function Footer() {
             </p>
           </div>
         </div>
-      </div>
     </footer>
   )
 }

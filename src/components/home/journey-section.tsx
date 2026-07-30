@@ -14,7 +14,7 @@ const steps = [
 
 export function JourneySection() {
   return (
-    <section className="py-20 md:py-24 lg:py-32 bg-texture bg-wood">
+    <section className="py-20 md:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <SectionHeader
           title="The Reading Journey"
