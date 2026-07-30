@@ -35,7 +35,7 @@ export function Nav() {
           href="/"
           className="group flex items-center gap-3 transition-transform duration-400 hover:scale-[1.02]"
         >
-          <LogoMark className="h-10 w-10 sm:h-11 sm:w-11 transition-all duration-500 group-hover:drop-shadow-[0_0_10px_var(--accent-brass)]" />
+          <LogoMark className="h-10 w-10 sm:h-11 sm:w-11" />
           <span className="hidden sm:inline font-heading text-xl tracking-wider text-[--text-primary] transition-colors duration-400 group-hover:text-[--accent-brass]">
             {SITE_NAME}
           </span>
