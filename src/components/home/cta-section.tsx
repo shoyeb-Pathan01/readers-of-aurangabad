@@ -8,7 +8,7 @@ import { FadeIn } from "@/components/ui/motion-wrapper"
 
 export function CTASection() {
   return (
-    <section className="relative py-16 md:py-20 lg:py-24 overflow-hidden">
+    <section className="relative py-12 md:py-14 lg:py-16 overflow-hidden">
       <IwanGateway className="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <FadeIn>
           <Heart className="mx-auto h-10 w-10 text-[--accent-brass] animate-glow-pulse mb-6" />

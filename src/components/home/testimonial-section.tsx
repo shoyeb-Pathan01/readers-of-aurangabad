@@ -26,14 +26,14 @@ const testimonials = [
 
 export function TestimonialSection() {
   return (
-    <section className="py-20 md:py-24 lg:py-32">
+    <section className="py-14 md:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <SectionHeader
           title="Voices from the Community"
           subtitle="What our members say about their experience"
         />
 
-        <StaggerContainer className="mt-12 md:mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+        <StaggerContainer className="mt-8 md:mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           {testimonials.map((t) => (
             <StaggerItem key={t.name}>
               <ArchCard className="relative h-full" torn>

@@ -14,14 +14,14 @@ const steps = [
 
 export function JourneySection() {
   return (
-    <section className="py-20 md:py-24 lg:py-32">
+    <section className="py-14 md:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <SectionHeader
           title="The Reading Journey"
           subtitle="Discover &rarr; Meet &rarr; Read &rarr; Reflect — a simple rhythm that creates connection."
         />
 
-        <StaggerContainer className="mt-12 md:mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <StaggerContainer className="mt-8 md:mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, i) => {
             const Icon = step.icon
             return (

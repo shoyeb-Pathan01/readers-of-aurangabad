@@ -25,12 +25,12 @@ export function FeaturedQuoteSection() {
   const quote = quotes[current]
 
   return (
-    <section className="py-20 md:py-24 lg:py-32">
+    <section className="py-14 md:py-16 lg:py-20">
       <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-10">
         <SectionHeader title="A Moment with Books" subtitle="Words that inspire our reading journey" />
 
         <ScaleReveal key={current}>
-          <ArchCard className="relative mt-12 md:mt-14 text-center" torn>
+          <ArchCard className="relative mt-8 md:mt-10 text-center" torn>
             <ArchCardContent className="px-8 py-10 md:px-12">
               <Quote className="mx-auto mb-6 h-9 w-9 text-[--accent-brass] opacity-20" />
               <blockquote className="font-script text-2xl leading-relaxed text-[--text-primary] sm:text-3xl md:text-4xl drop-cap" style={{ transform: "rotate(-1.5deg)" }}>

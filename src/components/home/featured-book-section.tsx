@@ -10,7 +10,7 @@ import { Book3D } from "@/components/ui/book-3d"
 
 export function FeaturedBookSection() {
   return (
-    <section className="py-20 md:py-24 lg:py-32 bg-library">
+    <section className="py-14 md:py-16 lg:py-20 bg-library">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="text-[--text-on-library]">
           <SectionHeader

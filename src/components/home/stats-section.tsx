@@ -14,14 +14,14 @@ const stats = [
 
 export function StatsSection() {
   return (
-    <section className="py-20 md:py-24 lg:py-32 overflow-hidden">
+    <section className="py-14 md:py-16 lg:py-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <SectionHeader
           title="Our Reach"
           subtitle="Growing one Sunday at a time"
         />
 
-        <div className="mt-12 md:mt-14 grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+        <div className="mt-8 md:mt-10 grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
           {stats.map((s) => {
             const Icon = s.icon
             return (
