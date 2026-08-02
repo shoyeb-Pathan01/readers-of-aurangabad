@@ -65,7 +65,7 @@ export function Nav() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-1.5 md:flex">
+        <div className="hidden items-center gap-1 md:flex">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href
             const Icon = NAV_ICONS[link.href]
@@ -74,36 +74,17 @@ export function Nav() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "nav-tab-btn relative flex h-10 items-center",
-                  isActive ? "nav-tab-btn--active text-[--accent-brass-text]" : "text-[--text-secondary] hover:text-[--accent-brass-text]",
+                  "relative flex items-center gap-1.5 px-4 py-2 text-sm font-body tracking-wide transition-colors duration-400",
+                  "hover:text-[--accent-brass-text]",
+                  "after:absolute after:bottom-0.5 after:left-4 after:right-4 after:h-[1px] after:bg-[--accent-brass]",
+                  "after:origin-center after:transition-transform after:duration-400 after:ease-out",
+                    isActive
+                      ? "text-[--accent-brass-text] after:scale-x-100"
+                      : "text-[--text-secondary] after:scale-x-0 hover:after:scale-x-100",
                 )}
               >
-                <svg
-                  className="absolute inset-0 h-full w-full"
-                  viewBox="0 0 300 80"
-                  preserveAspectRatio="none"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <rect
-                    className="nav-tab-line nav-tab-line--outer"
-                    strokeWidth="8"
-                    vectorEffect="non-scaling-stroke"
-                    strokeLinecap="round"
-                    x="4" y="4" width="292" height="72" rx="36"
-                  />
-                  <rect
-                    className="nav-tab-line nav-tab-line--inner"
-                    strokeWidth="4"
-                    vectorEffect="non-scaling-stroke"
-                    strokeLinecap="round"
-                    x="4" y="4" width="292" height="72" rx="36"
-                  />
-                </svg>
-                <span className="relative flex items-center gap-1.5 px-5 text-sm font-body tracking-wide transition-colors duration-400">
-                  <Icon className="h-3.5 w-3.5" />
-                  {link.label}
-                </span>
+                <Icon className="h-3.5 w-3.5" />
+                {link.label}
               </Link>
             )
           })}
