@@ -45,11 +45,13 @@ export function JaliPattern({ className }: { className?: string }) {
 export function DomeDivider({ className }: { className?: string }) {
   return (
     <svg
-      className={className}
+      className={`shrink-0 ${className ?? ""}`}
       width="120"
       height="40"
       viewBox="0 0 120 40"
       fill="none"
+      preserveAspectRatio="xMidYMid meet"
+      style={{ width: 120, height: 40, minWidth: 120, maxWidth: 120 }}
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
