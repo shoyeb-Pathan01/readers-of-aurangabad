@@ -83,7 +83,7 @@ export function HeroSection() {
             <GoldLink href="/meetups" variant="primary" size="lg">
               Join a Meetup
             </GoldLink>
-            <GoldLink href="/community" variant="secondary" size="lg">
+            <GoldLink href="/community" variant="primary" size="lg">
               Learn More
             </GoldLink>
           </div>
